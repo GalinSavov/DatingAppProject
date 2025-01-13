@@ -12,7 +12,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   http = inject(HttpClient);
-  title = 'client';
+  title = 'Dating App';
   users: any;
 
   ngOnInit(): void {
