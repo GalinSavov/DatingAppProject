@@ -3088,11 +3088,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingApp\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingApp\\API\\API.csproj",
+      "projectPath": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\API.csproj",
       "packagesPath": "C:\\Users\\galsa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingApp\\API\\obj\\",
+      "outputPath": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
