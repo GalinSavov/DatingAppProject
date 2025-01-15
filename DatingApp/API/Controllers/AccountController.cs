@@ -1,25 +1,53 @@
 using System.Security.Cryptography;
 using System.Text;
 using API.Data;
+using API.DTOs;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
 public class AccountController(DataContext dataContext):BaseApiController 
 {
     [HttpPost("register")]
-    public async Task<ActionResult<AppUser>> Register(string username, string password)
+    public async Task<ActionResult<AppUser>> Register(RegisterDTO registerDTO)
     {
+
+        if(await UserExists(registerDTO.Username))
+           return BadRequest("Username is already taken!");
+
         using var hmac = new HMACSHA512();
-        var user = new AppUser{
-            UserName = username,
-            PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password)),
+        AppUser user = new AppUser{
+            UserName = registerDTO.Username.ToLower(),
+            PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDTO.Password)),
             PasswordSalt = hmac.Key
         };
         dataContext.Users.Add(user);
         await dataContext.SaveChangesAsync();
 
         return user;
+    }
+    [HttpPost("login")]
+    public async Task<ActionResult<AppUser>> Login(LoginDTO loginDTO)
+    {
+       var appUser = await dataContext.Users.FirstOrDefaultAsync(x => x.UserName == loginDTO.Username.ToLower());
+
+       if(appUser == null)
+          return Unauthorized("Invalid username!");
+
+       using var hmac = new HMACSHA512(appUser.PasswordSalt);
+       var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDTO.Password));   
+
+       for (int i = 0; i < computedHash.Length; i++)
+       {
+            if(computedHash[i] != appUser.PasswordHash[i])
+               return Unauthorized("Invalid password!");
+       }
+        return appUser;
+    }
+    private async Task<bool> UserExists(string username)
+    {
+        return await dataContext.Users.AnyAsync(x => x.UserName.ToLower() == username.ToLower());
     }
 }
