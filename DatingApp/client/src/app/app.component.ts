@@ -2,7 +2,8 @@ import { NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavComponent } from "./nav/nav.component";
+import { NavComponent } from './nav/nav.component';
+
 
 @Component({
   selector: 'app-root',
