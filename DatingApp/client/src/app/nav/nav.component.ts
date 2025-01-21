@@ -4,6 +4,8 @@ import { AccountService } from '../_services/account.service';
 import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { provideToastr, ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-nav',
   standalone: true,
@@ -19,6 +21,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class NavComponent {
   accountService = inject(AccountService);
+  private toastr = inject(ToastrService);
   model: any = {};
 
   login() {
@@ -26,7 +29,7 @@ export class NavComponent {
       next: (response) => {
         console.log(response);
       },
-      error: (error) => console.log(error),
+      error: (error) => this.toastr.error(error.error)
     });
   }
   logout() {
