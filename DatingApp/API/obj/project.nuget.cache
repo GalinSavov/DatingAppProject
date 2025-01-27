@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "s7YWE5UvSb0=",
+  "dgSpecHash": "mU2fsbswg0I=",
   "success": true,
   "projectFilePath": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\galsa\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\galsa\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\galsa\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\9.0.1\\microsoft.aspnetcore.authentication.jwtbearer.9.0.1.nupkg.sha512",
     "C:\\Users\\galsa\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
