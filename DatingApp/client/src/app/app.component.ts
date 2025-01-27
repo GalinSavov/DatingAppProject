@@ -5,6 +5,7 @@ import { NavComponent } from './nav/nav.component';
 import { AccountService } from './_services/account.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
     NavComponent,
     HomeComponent,
     RegisterComponent,
+    TestErrorsComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

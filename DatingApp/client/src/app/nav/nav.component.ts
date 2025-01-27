@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { provideToastr, ToastrService } from 'ngx-toastr';
+import { TestErrorsComponent } from '../errors/test-errors/test-errors.component';
 
 @Component({
   selector: 'app-nav',
@@ -29,7 +30,7 @@ export class NavComponent {
       next: (response) => {
         console.log(response);
       },
-      error: (error) => this.toastr.error(error.error)
+      error: (error) => this.toastr.error(error.error),
     });
   }
   logout() {
