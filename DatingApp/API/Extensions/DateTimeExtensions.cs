@@ -1,6 +1,5 @@
 namespace API.Extensions;
 
-
 public static class DateTimeExtensions
 {
     public static int CalculateAge(this DateOnly dob)
