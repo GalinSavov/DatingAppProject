@@ -17,6 +17,7 @@ app.MapControllers();
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
 
+
 try
 {
     var dataContext = services.GetRequiredService<DataContext>();
