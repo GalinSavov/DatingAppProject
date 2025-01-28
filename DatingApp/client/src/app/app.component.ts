@@ -6,6 +6,7 @@ import { AccountService } from './_services/account.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
+import { EditProfileComponent } from './updates/edit-profile/edit-profile.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { TestErrorsComponent } from './errors/test-errors/test-errors.component'
     HomeComponent,
     RegisterComponent,
     TestErrorsComponent,
+    EditProfileComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
