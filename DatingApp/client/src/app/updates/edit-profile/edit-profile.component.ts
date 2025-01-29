@@ -1,4 +1,10 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { AccountService } from '../../_services/account.service';
 import { ActivatedRoute } from '@angular/router';
@@ -6,21 +12,28 @@ import { Member } from '../../_models/member';
 import { MemberService } from '../../_services/member.service';
 import { HttpClient } from '@angular/common/http';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-profile',
   standalone: true,
-  imports: [TabsModule,FormsModule],
+  imports: [TabsModule, FormsModule],
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css',
 })
 export class EditProfileComponent implements OnInit {
+  @ViewChild('editForm') editForm?: NgForm; //accesses the form in the HTML
+  @HostListener('window:beforeunload', ['$event']) notify($event: any) {
+    // a browser guard against unsaved changes
+    if (this.editForm?.dirty) $event.returnValue = true;
+  }
   ngOnInit(): void {
     this.loadUserProfile();
   }
   private accountService = inject(AccountService);
   private memberService = inject(MemberService);
+  private toastr = inject(ToastrService);
   member?: Member;
 
   loadUserProfile() {
@@ -34,5 +47,10 @@ export class EditProfileComponent implements OnInit {
         },
         error: (error) => console.log(error),
       });
+  }
+  updateMember() {
+    console.log(this.member);
+    this.toastr.success('Updated profile successfully!');
+    this.editForm?.reset(this.member);
   }
 }
