@@ -5,11 +5,13 @@ import { ActivatedRoute } from '@angular/router';
 import { Member } from '../../_models/member';
 import { MemberService } from '../../_services/member.service';
 import { HttpClient } from '@angular/common/http';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-profile',
   standalone: true,
-  imports: [],
+  imports: [TabsModule,FormsModule],
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css',
 })
