@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { EditProfileComponent } from './updates/edit-profile/edit-profile.component';
+import { NgxSpinnerComponent } from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ import { EditProfileComponent } from './updates/edit-profile/edit-profile.compon
     RegisterComponent,
     TestErrorsComponent,
     EditProfileComponent,
+    NgxSpinnerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
