@@ -5,12 +5,9 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { environment } from '../../../environments/environment';
 import { AccountService } from '../../_services/account.service';
-import { ActivatedRoute } from '@angular/router';
 import { Member } from '../../_models/member';
 import { MemberService } from '../../_services/member.service';
-import { HttpClient } from '@angular/common/http';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -56,5 +53,8 @@ export class EditProfileComponent implements OnInit {
         this.editForm?.reset(this.member);
       },
     });
+  }
+  onMemberChanged(event: Member) {
+    this.member = event;
   }
 }
