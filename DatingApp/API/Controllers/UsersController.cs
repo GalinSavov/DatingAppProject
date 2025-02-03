@@ -66,4 +66,19 @@ public class UsersController(IUserRepository userRepository, IMapper mapper, IPh
         if (await userRepository.SaveAllAsync()) return NoContent();
         return BadRequest("Failed to update the main photo of the user");
     }
+    [HttpDelete("delete-photo/{photoId:int}")]
+    public async Task<ActionResult> DeletePhoto(int photoId)
+    {
+        var user = await userRepository.GetUserByUsernameAsync(User.GetUsername());
+        if (user == null) return BadRequest("Cannot find user");
+        var photo = user.Photos.FirstOrDefault(p => p.Id == photoId);
+        if (photo == null || photo.IsMain) return BadRequest("Can not delete that photo");
+        var publicId = photo.PublicId;
+        if (publicId == null) return BadRequest("Public id of photo is null");
+        var result = await photoService.DeletePhotoAsync(publicId);
+        if (result.Error != null) return BadRequest(result.Error.Message);
+        user.Photos.Remove(photo);
+        if (await userRepository.SaveAllAsync()) return Ok();
+        return BadRequest("Problem deleting photo!");
+    }
 }

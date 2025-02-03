@@ -56,5 +56,6 @@ export class EditProfileComponent implements OnInit {
   }
   onMemberChanged(event: Member) {
     this.member = event;
+    console.log(event);
   }
 }

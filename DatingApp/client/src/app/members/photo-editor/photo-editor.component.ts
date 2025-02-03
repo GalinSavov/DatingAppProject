@@ -1,4 +1,11 @@
-import { Component, inject, input, OnInit, output } from '@angular/core';
+import {
+  Component,
+  inject,
+  input,
+  OnInit,
+  output,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { Member } from '../../_models/member';
 import { DecimalPipe, NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { FileUploader, FileUploadModule } from 'ng2-file-upload';
@@ -45,6 +52,18 @@ export class PhotoEditorComponent implements OnInit {
         });
         this.memberChange.emit(updatedMember);
       },
+    });
+  }
+  deletePhoto(photo: Photo) {
+    this.memberService.deletePhoto(photo).subscribe({
+      next: (_) => {
+        const updatedMember = { ...this.member() };
+        updatedMember.photos = updatedMember.photos.filter(
+          (x) => x.id !== photo.id
+        );
+        this.memberChange.emit(updatedMember);
+      },
+      error: (error) => console.log(error),
     });
   }
   initializeUploader() {
