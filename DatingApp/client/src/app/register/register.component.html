@@ -1,10 +1,30 @@
 <form [formGroup]="registerForm" (ngSubmit)="register()">
   <h1 class="text-center text-primary">Sign Up</h1>
   <hr />
+  <div class="mb-3">
+    <label style="margin-right: 10px">I am </label>
+    <label class="form-check-label">
+      <input
+        type="radio"
+        class="form-check-input"
+        value="male"
+        formControlName="gender"
+      />
+      Male
+    </label>
+    <label class="form-check-label">
+      <input
+        type="radio"
+        class="form-check-input"
+        value="female"
+        formControlName="gender"
+      />
+      Female
+    </label>
+  </div>
   <app-text-input
     [formControl]="$any(registerForm.controls['username'])"
     [label]="'Username'"
-    [type]="'text'"
   ></app-text-input>
   <app-text-input
     [formControl]="$any(registerForm.controls['password'])"
@@ -15,6 +35,18 @@
     [formControl]="$any(registerForm.controls['confirmPassword'])"
     [label]="'Confirm Password'"
     [type]="'password'"
+  ></app-text-input>
+  <app-text-input
+    [formControl]="$any(registerForm.controls['knownAs'])"
+    [label]="'Known As'"
+  ></app-text-input
+  ><app-text-input
+    [formControl]="$any(registerForm.controls['city'])"
+    [label]="'City'"
+  ></app-text-input
+  ><app-text-input
+    [formControl]="$any(registerForm.controls['country'])"
+    [label]="'Country'"
   ></app-text-input>
   <div class="form-group text-center">
     <button class="btn btn-success me-2" type="submit">Register</button>
