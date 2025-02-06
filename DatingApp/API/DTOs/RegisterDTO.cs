@@ -10,4 +10,14 @@ public class RegisterDTO
     [Required]
     [MinLength(6, ErrorMessage = "Password must be at least 6 characters long.")]
     public string Password { get; set; } = string.Empty;
+    [Required]
+    public string? Gender { get; set; }
+    [Required]
+    public string? KnownAs { get; set; }
+    [Required]
+    public string? DateOfBirth { get; set; }
+    [Required]
+    public string? City { get; set; }
+    [Required]
+    public string? Country { get; set; }
 }
