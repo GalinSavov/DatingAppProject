@@ -1,6 +1,6 @@
 namespace API.Helpers;
 
-public class ClientPaginationParams
+public class UserParams
 {
     private const int MAX_ITEMS_PER_PAGE = 50;
     public int CurrentPageNumber { get; set; } = 1;
