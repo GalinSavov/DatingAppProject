@@ -11,4 +11,8 @@ public class UserParams
         get => itemsPerPage;
         set => itemsPerPage = (value > MAX_ITEMS_PER_PAGE) ? MAX_ITEMS_PER_PAGE : value;
     }
+    public string? Gender { get; set; }
+    public string? CurrentUsername { get; set; }
+    public int MinAge { get; set; } = 18;
+    public int MaxAge { get; set; } = 60;
 }

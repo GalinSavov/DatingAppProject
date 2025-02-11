@@ -12,8 +12,17 @@ public class UserRepository(DataContext dataContext, IMapper mapper) : IUserRepo
 {
     public async Task<PagedList<MemberDTO>> GetAllMembersAsync(UserParams userParams)
     {
-        var query = dataContext.Users.ProjectTo<MemberDTO>(mapper.ConfigurationProvider);
-        return await PagedList<MemberDTO>.CreateAsync(query, userParams.ItemsPerPage, userParams.CurrentPageNumber);
+        var query = dataContext.Users.AsQueryable();
+        query = query.Where(x => x.UserName != userParams.CurrentUsername);
+        if (userParams.Gender != null)
+        {
+            query = query.Where(x => x.Gender == userParams.Gender);
+        }
+        var oldestDateOfBirth = DateOnly.FromDateTime(DateTime.Today.AddYears(-userParams.MaxAge - 1));
+        var youngestDateOfBirth = DateOnly.FromDateTime(DateTime.Today.AddYears(-userParams.MinAge));
+        query = query.Where(x => x.DateOfBirth >= oldestDateOfBirth && x.DateOfBirth <= youngestDateOfBirth);
+
+        return await PagedList<MemberDTO>.CreateAsync(query.ProjectTo<MemberDTO>(mapper.ConfigurationProvider), userParams.ItemsPerPage, userParams.CurrentPageNumber);
     }
 
     public async Task<IEnumerable<AppUser>> GetAllUsersAsync()
