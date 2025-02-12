@@ -7,7 +7,6 @@ import { UserParams } from '../../_models/userParams';
 import { AccountService } from '../../_services/account.service';
 import { FormsModule } from '@angular/forms';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
-
 @Component({
   selector: 'app-member-list',
   standalone: true,

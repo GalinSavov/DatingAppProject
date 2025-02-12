@@ -12,11 +12,19 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { PhotoEditorComponent } from '../../members/photo-editor/photo-editor.component';
+import { DatePipe } from '@angular/common';
+import { TimeAgoCustomPipe } from '../../time-ago-custom.pipe';
 
 @Component({
   selector: 'app-edit-profile',
   standalone: true,
-  imports: [TabsModule, FormsModule, PhotoEditorComponent],
+  imports: [
+    TabsModule,
+    FormsModule,
+    PhotoEditorComponent,
+    DatePipe,
+    TimeAgoCustomPipe,
+  ],
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css',
 })
