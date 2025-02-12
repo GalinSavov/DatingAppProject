@@ -29,6 +29,7 @@ public class AccountController(DataContext dataContext, IMapper mapper) : BaseAp
             Username = user.UserName,
             Token = tokenService.CreateToken(user),
             KnownAs = user.KnownAs,
+            Gender = user.Gender,
         };
     }
     [HttpPost("login")]
@@ -52,6 +53,7 @@ public class AccountController(DataContext dataContext, IMapper mapper) : BaseAp
             Username = appUser.UserName,
             Token = tokenService.CreateToken(appUser),
             KnownAs = appUser.KnownAs,
+            Gender = appUser.Gender,
             PhotoUrl = appUser.Photos?.FirstOrDefault(p => p.IsMain)?.Url,
         };
     }

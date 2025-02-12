@@ -3,9 +3,9 @@ import { inject, Injectable, signal } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Member } from '../_models/member';
 import { GalleryItem, ImageItem } from 'ng-gallery';
-import { of, tap } from 'rxjs';
 import { Photo } from '../_models/photo';
 import { PaginationResult } from '../_models/pagination';
+import { UserParams } from '../_models/userParams';
 
 @Injectable({
   providedIn: 'root',
@@ -24,13 +24,15 @@ export class MemberService {
     return this.http.get<Member>(this.baseUrl + 'users/' + username);
   }
 
-  getMembers(currentPageNumber?: number, itemsPerPage?: number) {
-    let params = new HttpParams();
+  getMembers(userParams: UserParams) {
+    let params = this.setHeaders(
+      userParams.currentPageNumber,
+      userParams.itemsPerPage
+    );
+    params = params.append('minAge', userParams.minAge);
+    params = params.append('maxAge', userParams.maxAge);
+    params = params.append('gender', userParams.gender);
 
-    if (currentPageNumber && itemsPerPage) {
-      params = params.append('currentPageNumber', currentPageNumber);
-      params = params.append('itemsPerPage', itemsPerPage);
-    }
     return this.http
       .get<Member[]>(this.baseUrl + 'users/', { observe: 'response', params })
       .subscribe({
@@ -41,6 +43,15 @@ export class MemberService {
           });
         },
       });
+  }
+  private setHeaders(currentPageNumber: number, itemsPerPage: number) {
+    let params = new HttpParams();
+    if (currentPageNumber && itemsPerPage) {
+      params = params.append('currentPageNumber', currentPageNumber);
+      params = params.append('itemsPerPage', itemsPerPage);
+    }
+
+    return params;
   }
   updateMember(member: Member) {
     return this.http

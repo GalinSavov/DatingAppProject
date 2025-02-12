@@ -3,30 +3,41 @@ import { MemberService } from '../../_services/member.service';
 import { Member } from '../../_models/member';
 import { MemberCardComponent } from '../member-card/member-card.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { UserParams } from '../../_models/userParams';
+import { AccountService } from '../../_services/account.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-member-list',
   standalone: true,
-  imports: [MemberCardComponent, PaginationModule],
+  imports: [MemberCardComponent, PaginationModule, FormsModule],
   templateUrl: './member-list.component.html',
   styleUrl: './member-list.component.css',
 })
 export class MemberListComponent implements OnInit {
   memberService = inject(MemberService);
-  currentPageNumber = 1;
-  itemsPerPage = 5;
+  accountService = inject(AccountService);
+  userParams = new UserParams(this.accountService.currentUser());
+  genderList = [
+    { value: 'male', display: 'Male' },
+    { value: 'female', display: 'Female' },
+  ];
 
   ngOnInit(): void {
     if (!this.memberService.paginationResult()) this.displayMembers();
   }
 
   displayMembers() {
-    this.memberService.getMembers(this.currentPageNumber, this.itemsPerPage);
+    this.memberService.getMembers(this.userParams);
   }
   pageChanged(event: any) {
-    if (this.currentPageNumber !== event.page) {
-      this.currentPageNumber = event.page;
+    if (this.userParams.currentPageNumber !== event.page) {
+      this.userParams.currentPageNumber = event.page;
       this.displayMembers();
     }
+  }
+  resetFilters() {
+    this.userParams = new UserParams(this.accountService.currentUser());
+    this.displayMembers();
   }
 }

@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { provideToastr, ToastrService } from 'ngx-toastr';
-import { TestErrorsComponent } from '../errors/test-errors/test-errors.component';
 
 @Component({
   selector: 'app-nav',
