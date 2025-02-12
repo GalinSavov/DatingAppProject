@@ -11,26 +11,38 @@ import { GalleryItem, ImageItem } from 'ng-gallery';
 import { Photo } from '../_models/photo';
 import { PaginationResult } from '../_models/pagination';
 import { UserParams } from '../_models/userParams';
+import { of } from 'rxjs';
+import { AccountService } from './account.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MemberService {
   private http = inject(HttpClient);
+  private accountService = inject(AccountService);
   baseUrl = environment.apiUrl;
   paginationResult = signal<PaginationResult<Member[]> | null>(null);
   images: GalleryItem[] = [];
   memberCache = new Map();
+  user = this.accountService.currentUser();
+  userParams = signal<UserParams>(new UserParams(this.user));
+  resetUserParams() {
+    this.userParams.set(new UserParams(this.user));
+  }
 
   getMember(username?: string) {
-    // const member = this.members().find((x) => x.username == username);
-    // if (member !== undefined) return of(member);
+    const member: Member = [...this.memberCache.values()]
+      .reduce((arr, element) => arr.concat(element.body), [])
+      .find((x: Member) => x.username == username);
+    console.log(member);
+
+    if (member) return of(member);
     return this.http.get<Member>(this.baseUrl + 'users/' + username);
   }
 
-  getMembers(userParams: UserParams) {
+  getMembers() {
     const cachedParams = this.memberCache.get(
-      Object.values(userParams).join('-')
+      Object.values(this.userParams()).join('-')
     );
 
     if (cachedParams) {
@@ -38,21 +50,24 @@ export class MemberService {
     }
 
     let params = this.setPaginationHeaders(
-      userParams.currentPageNumber,
-      userParams.itemsPerPage
+      this.userParams().currentPageNumber,
+      this.userParams().itemsPerPage
     );
 
-    params = params.append('minAge', userParams.minAge);
-    params = params.append('maxAge', userParams.maxAge);
-    params = params.append('gender', userParams.gender);
-    params = params.append('orderBy', userParams.orderBy);
+    params = params.append('minAge', this.userParams().minAge);
+    params = params.append('maxAge', this.userParams().maxAge);
+    params = params.append('gender', this.userParams().gender);
+    params = params.append('orderBy', this.userParams().orderBy);
 
     return this.http
       .get<Member[]>(this.baseUrl + 'users/', { observe: 'response', params })
       .subscribe({
         next: (response) => {
           this.setPaginatedResponse(response);
-          this.memberCache.set(Object.values(userParams).join('-'), response);
+          this.memberCache.set(
+            Object.values(this.userParams()).join('-'),
+            response
+          );
         },
       });
   }
