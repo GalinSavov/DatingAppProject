@@ -1,4 +1,9 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpParams,
+  HttpResponse,
+} from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Member } from '../_models/member';
@@ -13,10 +18,9 @@ import { UserParams } from '../_models/userParams';
 export class MemberService {
   private http = inject(HttpClient);
   baseUrl = environment.apiUrl;
-  //members = signal<Member[]>([]);
   paginationResult = signal<PaginationResult<Member[]> | null>(null);
-
   images: GalleryItem[] = [];
+  memberCache = new Map();
 
   getMember(username?: string) {
     // const member = this.members().find((x) => x.username == username);
@@ -25,10 +29,19 @@ export class MemberService {
   }
 
   getMembers(userParams: UserParams) {
-    let params = this.setHeaders(
+    const cachedParams = this.memberCache.get(
+      Object.values(userParams).join('-')
+    );
+
+    if (cachedParams) {
+      return this.setPaginatedResponse(cachedParams);
+    }
+
+    let params = this.setPaginationHeaders(
       userParams.currentPageNumber,
       userParams.itemsPerPage
     );
+
     params = params.append('minAge', userParams.minAge);
     params = params.append('maxAge', userParams.maxAge);
     params = params.append('gender', userParams.gender);
@@ -38,14 +51,21 @@ export class MemberService {
       .get<Member[]>(this.baseUrl + 'users/', { observe: 'response', params })
       .subscribe({
         next: (response) => {
-          this.paginationResult.set({
-            items: response.body as Member[],
-            pagination: JSON.parse(response.headers.get('Pagination')!),
-          });
+          this.setPaginatedResponse(response);
+          this.memberCache.set(Object.values(userParams).join('-'), response);
         },
       });
   }
-  private setHeaders(currentPageNumber: number, itemsPerPage: number) {
+  private setPaginatedResponse(response: HttpResponse<Member[]>) {
+    this.paginationResult.set({
+      items: response.body as Member[],
+      pagination: JSON.parse(response.headers.get('Pagination')!),
+    });
+  }
+  private setPaginationHeaders(
+    currentPageNumber: number,
+    itemsPerPage: number
+  ) {
     let params = new HttpParams();
     if (currentPageNumber && itemsPerPage) {
       params = params.append('currentPageNumber', currentPageNumber);
