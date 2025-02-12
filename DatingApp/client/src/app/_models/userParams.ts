@@ -2,6 +2,7 @@ import { User } from './user';
 
 export class UserParams {
   gender: string;
+  orderBy = 'lastActive';
   minAge = 18;
   maxAge = 65;
   currentPageNumber = 1;

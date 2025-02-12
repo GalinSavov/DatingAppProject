@@ -21,6 +21,11 @@ public class UserRepository(DataContext dataContext, IMapper mapper) : IUserRepo
         var oldestDateOfBirth = DateOnly.FromDateTime(DateTime.Today.AddYears(-userParams.MaxAge - 1));
         var youngestDateOfBirth = DateOnly.FromDateTime(DateTime.Today.AddYears(-userParams.MinAge));
         query = query.Where(x => x.DateOfBirth >= oldestDateOfBirth && x.DateOfBirth <= youngestDateOfBirth);
+        query = userParams.OrderBy switch
+        {
+            "created" => query.OrderByDescending(x => x.Created),
+            _ => query.OrderByDescending(x => x.LastActive)
+        };
 
         return await PagedList<MemberDTO>.CreateAsync(query.ProjectTo<MemberDTO>(mapper.ConfigurationProvider), userParams.ItemsPerPage, userParams.CurrentPageNumber);
     }
