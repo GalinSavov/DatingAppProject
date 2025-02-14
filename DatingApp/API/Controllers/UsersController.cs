@@ -86,4 +86,5 @@ public class UsersController(IUserRepository userRepository, IMapper mapper, IPh
         if (await userRepository.SaveAllAsync()) return Ok();
         return BadRequest("Problem deleting photo!");
     }
+
 }
