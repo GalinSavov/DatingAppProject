@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { EditProfileComponent } from './updates/edit-profile/edit-profile.component';
 import { NgxSpinnerComponent } from 'ngx-spinner';
+import { LikesService } from './_services/likes.service';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,6 @@ import { NgxSpinnerComponent } from 'ngx-spinner';
 })
 export class AppComponent implements OnInit {
   private accountService = inject(AccountService);
-
   ngOnInit(): void {
     this.setCurrentUser();
   }
@@ -36,5 +36,6 @@ export class AppComponent implements OnInit {
     if (!userString) return;
     const user = JSON.parse(userString);
     this.accountService.currentUser.set(user);
+    this.accountService.setCurrentUser(user);
   }
 }

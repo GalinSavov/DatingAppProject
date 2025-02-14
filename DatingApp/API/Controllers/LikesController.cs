@@ -21,13 +21,15 @@ public class LikesController(ILikesRepository likesRepository, IUserRepository u
         }
         else
         {
-            var like = new UserLike();
-            like.SourceUserId = sourceUserId;
-            like.TargetUserId = targetUserId;
+            var like = new UserLike
+            {
+                SourceUserId = sourceUserId,
+                TargetUserId = targetUserId
+            };
             likesRepository.AddLike(like);
         }
-        if (await likesRepository.SaveChanges()) return Ok();
 
+        if (await likesRepository.SaveChanges()) return Ok();
         return BadRequest("Failed to update the toggle of a like");
     }
 
@@ -45,7 +47,6 @@ public class LikesController(ILikesRepository likesRepository, IUserRepository u
     public async Task<ActionResult<IEnumerable<int>>> GetCurrentUserLikeIds()
     {
         var currentUserID = User.GetId();
-        if (currentUserID == -1) return BadRequest("Could not find user");
         var currentUserLikeIds = likesRepository.GetCurrentUserLikeIds(currentUserID);
         return Ok(await currentUserLikeIds);
     }
