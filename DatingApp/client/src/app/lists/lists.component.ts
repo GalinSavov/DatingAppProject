@@ -1,10 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { LikesService } from '../_services/likes.service';
 import { Member } from '../_models/member';
-import { NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
-import { MemberCardComponent } from "../members/member-card/member-card.component";
+import { MemberCardComponent } from '../members/member-card/member-card.component';
 
 @Component({
   selector: 'app-lists',
@@ -26,17 +25,14 @@ export class ListsComponent implements OnInit {
       next: (members) => (this.members = members),
     });
   }
-  getTitle() {
+  getTitle(): string {
     switch (this.predicate) {
       case 'liked':
-        'Users You Liked';
-        break;
+        return 'Users You Liked';
       case 'likedBy':
-        'Users Who Liked You';
-        break;
+        return 'Users Who Liked You';
       default:
-        'Mutual';
-        break;
+        return 'Mutual';
     }
   }
 }
