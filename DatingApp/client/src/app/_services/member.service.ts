@@ -13,6 +13,7 @@ import { PaginationResult } from '../_models/pagination';
 import { UserParams } from '../_models/userParams';
 import { of } from 'rxjs';
 import { AccountService } from './account.service';
+import { setPaginatedResponse, setPaginationHeaders } from './paginationHelper';
 
 @Injectable({
   providedIn: 'root',
@@ -46,10 +47,10 @@ export class MemberService {
     );
 
     if (cachedParams) {
-      return this.setPaginatedResponse(cachedParams);
+      return setPaginatedResponse(cachedParams, this.paginationResult);
     }
 
-    let params = this.setPaginationHeaders(
+    let params = setPaginationHeaders(
       this.userParams().currentPageNumber,
       this.userParams().itemsPerPage
     );
@@ -63,7 +64,7 @@ export class MemberService {
       .get<Member[]>(this.baseUrl + 'users/', { observe: 'response', params })
       .subscribe({
         next: (response) => {
-          this.setPaginatedResponse(response);
+          setPaginatedResponse(response, this.paginationResult);
           this.memberCache.set(
             Object.values(this.userParams()).join('-'),
             response
@@ -71,24 +72,7 @@ export class MemberService {
         },
       });
   }
-  private setPaginatedResponse(response: HttpResponse<Member[]>) {
-    this.paginationResult.set({
-      items: response.body as Member[],
-      pagination: JSON.parse(response.headers.get('Pagination')!),
-    });
-  }
-  private setPaginationHeaders(
-    currentPageNumber: number,
-    itemsPerPage: number
-  ) {
-    let params = new HttpParams();
-    if (currentPageNumber && itemsPerPage) {
-      params = params.append('currentPageNumber', currentPageNumber);
-      params = params.append('itemsPerPage', itemsPerPage);
-    }
 
-    return params;
-  }
   updateMember(member: Member) {
     return this.http
       .put(this.baseUrl + 'users', member)
