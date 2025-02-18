@@ -19,8 +19,12 @@ public class AppUser
     public required string Country { get; set; }
     public List<Photo> Photos { get; set; } = [];
 
+    // navigation properties : retrieve a list of likes or messages from an user query
     public List<UserLike> LikedByOtherUsers { get; set; } = [];
     public List<UserLike> LikedUsers { get; set; } = [];
+
+    public List<Message> SentMessages { get; set; } = [];
+    public List<Message> ReceivedMessages { get; set; } = [];
     public int GetAge()
     {
         return DateOfBirth.CalculateAge();
