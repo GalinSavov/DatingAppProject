@@ -75,6 +75,6 @@ public class MessagesController(IMessagesRepository messagesRepository, IUserRep
         var recipient = await userRepository.GetUserByUsernameAsync(recipientUsername);
         if (currentUsername == null || recipient == null) return NotFound();
         recipientUsername = recipient.UserName;
-        return Ok(messagesRepository.GetMessageThread(currentUsername, recipientUsername));
+        return Ok(await messagesRepository.GetMessageThread(currentUsername, recipientUsername));
     }
 }
