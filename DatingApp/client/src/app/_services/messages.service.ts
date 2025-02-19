@@ -11,7 +11,7 @@ import { PaginationResult } from '../_models/pagination';
 export class MessagesService {
   private http = inject(HttpClient);
   baseUrl = environment.apiUrl;
-  paginatationResult = signal<PaginationResult<Message[]> | null>(null);
+  paginationResult = signal<PaginationResult<Message[]> | null>(null);
 
   getMessage(id: number) {
     this.http.get(`${this.baseUrl}${id}`);
@@ -32,7 +32,7 @@ export class MessagesService {
       })
       .subscribe({
         next: (response) =>
-          setPaginatedResponse(response, this.paginatationResult),
+          setPaginatedResponse(response, this.paginationResult),
       });
   }
 }
