@@ -34,18 +34,21 @@
     </div>
   </div>
   <div class="col-8">
-    <tabset class="member-tabset">
-      <tab heading="About {{ member.knownAs }}">
+    <tabset class="member-tabset" #memberTabs>
+      <tab
+        heading="About {{ member.knownAs }}"
+        (selectTab)="onTabActivated($event)"
+      >
         <h4>Description</h4>
         <p>{{ member.introduction }}</p>
         <h4>Looking for</h4>
         <p>{{ member.lookingFor }}</p>
       </tab>
-      <tab heading="Interests">
+      <tab heading="Interests" (selectTab)="onTabActivated($event)">
         <h4>Interests</h4>
         <p>{{ member.interests }}</p>
       </tab>
-      <tab heading="Photos">
+      <tab heading="Photos" (selectTab)="onTabActivated($event)">
         <h4>Photos</h4>
         <gallery
           [items]="images"
@@ -54,9 +57,12 @@
           class="gallery"
         ></gallery>
       </tab>
-      <tab heading="Messages">
+      <tab heading="Messages" (selectTab)="onTabActivated($event)">
         <h4>Messages</h4>
-        <app-member-messages [username]="member.username"></app-member-messages>
+        <app-member-messages
+          [username]="member.username"
+          [messages]="messages"
+        ></app-member-messages>
       </tab>
     </tabset>
   </div>

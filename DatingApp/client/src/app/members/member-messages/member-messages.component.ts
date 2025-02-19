@@ -11,19 +11,8 @@ import { TimeAgoCustomPipe } from '../../time-ago-custom.pipe';
   styleUrl: './member-messages.component.css',
 })
 export class MemberMessagesComponent implements OnInit {
-  ngOnInit(): void {
-    this.displayMessageThread();
-  }
+  ngOnInit(): void {}
   messagesService = inject(MessagesService);
-  messages: Message[] = [];
+  messages = input.required<Message[]>();
   username = input.required<string>();
-
-  displayMessageThread() {
-    this.messagesService.getMessageThread(this.username()).subscribe({
-      next: (response) => {
-        this.messages = response;
-      },
-      error: (err) => console.log(err + ' wtf happened'),
-    });
-  }
 }
