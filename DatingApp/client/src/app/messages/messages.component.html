@@ -1,1 +1,4 @@
-<p>messages works!</p>
+@for (message of this.messagesService.paginatationResult()?.items; track
+message.id) {
+<p>{{ message.content }}</p>
+}
