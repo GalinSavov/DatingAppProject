@@ -68,4 +68,13 @@ public class MessagesController(IMessagesRepository messagesRepository, IUserRep
         Response.AddPaginationHeader(messages);
         return messages;
     }
+    [HttpGet("thread/{recipientUsername}")]
+    public async Task<ActionResult<IEnumerable<MessageDTO>>> GetMessageThread(string recipientUsername)
+    {
+        var currentUsername = User.GetUsername();
+        var recipient = await userRepository.GetUserByUsernameAsync(recipientUsername);
+        if (currentUsername == null || recipient == null) return NotFound();
+        recipientUsername = recipient.UserName;
+        return Ok(messagesRepository.GetMessageThread(currentUsername, recipientUsername));
+    }
 }
