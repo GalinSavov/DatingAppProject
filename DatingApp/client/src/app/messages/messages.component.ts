@@ -28,6 +28,7 @@ export class MessagesComponent implements OnInit {
   currentPageNumber = 1;
   itemsPerPage = 10;
   container = 'Inbox';
+  isOutbox = this.container === 'Outbox';
 
   showMessages() {
     this.messagesService.getMessages(
