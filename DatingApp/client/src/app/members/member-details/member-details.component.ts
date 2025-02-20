@@ -74,4 +74,7 @@ export class MemberDetailsComponent implements OnInit {
       });
     }
   }
+  onUpdateMessages(event: Message) {
+    this.messages.push(event);
+  }
 }

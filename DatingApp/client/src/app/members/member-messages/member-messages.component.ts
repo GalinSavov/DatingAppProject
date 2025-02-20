@@ -1,18 +1,39 @@
-import { Component, inject, input, OnInit } from '@angular/core';
+import {
+  Component,
+  inject,
+  input,
+  OnInit,
+  output,
+  ViewChild,
+} from '@angular/core';
 import { MessagesService } from '../../_services/messages.service';
 import { Message } from '../../_models/message';
 import { TimeAgoCustomPipe } from '../../time-ago-custom.pipe';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-member-messages',
   standalone: true,
-  imports: [TimeAgoCustomPipe],
+  imports: [TimeAgoCustomPipe, FormsModule],
   templateUrl: './member-messages.component.html',
   styleUrl: './member-messages.component.css',
 })
-export class MemberMessagesComponent implements OnInit {
-  ngOnInit(): void {}
+export class MemberMessagesComponent {
+  @ViewChild('messageForm') messageForm?: NgForm;
   messagesService = inject(MessagesService);
   messages = input.required<Message[]>();
   username = input.required<string>();
+  messageContent = '';
+  updateMessages = output<Message>();
+
+  sendMessage() {
+    this.messagesService
+      .sendMessage(this.username(), this.messageContent)
+      .subscribe({
+        next: (message) => {
+          this.updateMessages.emit(message);
+          this.messageForm?.reset();
+        },
+      });
+  }
 }
