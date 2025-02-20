@@ -23,18 +23,43 @@ import { MessagesService } from '../../_services/messages.service';
   styleUrl: './member-details.component.css',
 })
 export class MemberDetailsComponent implements OnInit {
-  @ViewChild('memberTabs') memberTabs?: TabsetComponent;
+  @ViewChild('memberTabs', { static: true }) memberTabs?: TabsetComponent;
   activeTab?: TabDirective;
-  private memberService = inject(MemberService);
   private route = inject(ActivatedRoute);
-  member?: Member;
+  member: Member = {} as Member;
   images: GalleryItem[] = [];
   messages: Message[] = [];
   private messagesService = inject(MessagesService);
 
   ngOnInit(): void {
-    this.displayMember();
+    this.getMemberFromRouteResolver();
+    this.route.queryParams.subscribe({
+      next: (params) => {
+        params['tab'] && this.selectTab(params['tab']);
+      },
+    });
   }
+  getMemberFromRouteResolver() {
+    this.route.data.subscribe({
+      next: (data) => {
+        this.member = data['member'];
+        this.member &&
+          this.member.photos.map((photo) => {
+            this.images.push(
+              new ImageItem({ src: photo.url, thumb: photo.url })
+            );
+          });
+      },
+    });
+  }
+
+  selectTab(heading: string) {
+    if (this.memberTabs) {
+      const messageTab = this.memberTabs.tabs.find((x) => x.heading == heading);
+      if (messageTab) messageTab.active = true;
+    }
+  }
+
   onTabActivated(data: TabDirective) {
     this.activeTab = data;
     if (
@@ -48,20 +73,5 @@ export class MemberDetailsComponent implements OnInit {
         },
       });
     }
-  }
-
-  displayMember() {
-    const username = this.route.snapshot.paramMap.get('username');
-    if (!username) return;
-
-    this.memberService.getMember(username).subscribe({
-      next: (response) => {
-        this.member = response;
-        this.member.photos.map((photo) => {
-          this.images.push(new ImageItem({ src: photo.url, thumb: photo.url }));
-        });
-      },
-      error: (error) => console.log(error),
-    });
   }
 }
