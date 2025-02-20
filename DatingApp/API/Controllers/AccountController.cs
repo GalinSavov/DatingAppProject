@@ -20,8 +20,6 @@ public class AccountController(DataContext dataContext, IMapper mapper) : BaseAp
         using var hmac = new HMACSHA512();
         var user = mapper.Map<AppUser>(registerDTO);
         user.UserName = registerDTO.Username.ToLower();
-        user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDTO.Password));
-        user.PasswordSalt = hmac.Key;
         dataContext.Users.Add(user);
         await dataContext.SaveChangesAsync();
         return new UserDTO
@@ -40,14 +38,6 @@ public class AccountController(DataContext dataContext, IMapper mapper) : BaseAp
         if (appUser == null)
             return Unauthorized("Invalid username!");
 
-        using var hmac = new HMACSHA512(appUser.PasswordSalt);
-        var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDTO.Password));
-
-        for (int i = 0; i < computedHash.Length; i++)
-        {
-            if (computedHash[i] != appUser.PasswordHash[i])
-                return Unauthorized("Invalid password!");
-        }
         return new UserDTO
         {
             Username = appUser.UserName,
