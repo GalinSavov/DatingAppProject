@@ -5,11 +5,12 @@ using API.Extensions;
 using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
-
+[Authorize]
 public class MessagesController(IMessagesRepository messagesRepository, IUserRepository userRepository, IMapper mapper) : BaseApiController
 {
 
@@ -41,14 +42,18 @@ public class MessagesController(IMessagesRepository messagesRepository, IUserRep
     [HttpDelete("{id:int}")]
     public async Task<ActionResult> DeleteMessage(int id)
     {
-        var currentUser = await userRepository.GetUserByUsernameAsync(User.GetUsername());
-        if (currentUser == null) return BadRequest("Could not find current user");
-        if (currentUser.SentMessages.Contains(currentUser.SentMessages[id]))
-        {
-            messagesRepository.Delete(currentUser.SentMessages[id]);
-        }
+        var currentUserUsername = User.GetUsername();
+        var existingMessage = await GetMessageAsync(id);
+        if (existingMessage == null) return BadRequest("Could not find message!");
+        if (existingMessage.SenderUsername != currentUserUsername && existingMessage.RecipientUsername != currentUserUsername)
+            return Forbid();
+        if (existingMessage.SenderUsername == currentUserUsername)
+            existingMessage.SenderDeleted = true;
+        if (existingMessage.RecipientUsername == currentUserUsername)
+            existingMessage.RecipientDeleted = true;
+        if (existingMessage is { SenderDeleted: true, RecipientDeleted: true })
+            messagesRepository.Delete(existingMessage);
         if (await messagesRepository.SaveAllAsync()) return Ok();
-
         return BadRequest("Could not successfully delete the message!");
     }
 

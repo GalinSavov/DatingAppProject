@@ -37,6 +37,22 @@ export class MessagesComponent implements OnInit {
       this.container
     );
   }
+  deleteMessage(id: number) {
+    this.messagesService.deleteMessage(id).subscribe({
+      next: (_) => {
+        this.messagesService.paginationResult.update((prev) => {
+          if (prev && prev.items) {
+            prev.items.splice(
+              prev.items.findIndex((m) => m.id === id),
+              1
+            );
+            return prev;
+          }
+          return prev;
+        });
+      },
+    });
+  }
   pageChanged(event: any) {
     if (this.currentPageNumber !== event.page) {
       this.currentPageNumber = event.page;
