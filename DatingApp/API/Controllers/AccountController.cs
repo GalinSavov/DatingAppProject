@@ -28,7 +28,7 @@ public class AccountController(UserManager<AppUser> userManager, IMapper mapper)
         return new UserDTO
         {
             Username = user.UserName,
-            Token = tokenService.CreateToken(user),
+            Token = await tokenService.CreateToken(user),
             KnownAs = user.KnownAs,
             Gender = user.Gender,
         };
@@ -48,7 +48,7 @@ public class AccountController(UserManager<AppUser> userManager, IMapper mapper)
         return new UserDTO
         {
             Username = appUser.UserName,
-            Token = tokenService.CreateToken(appUser),
+            Token = await tokenService.CreateToken(appUser),
             KnownAs = appUser.KnownAs,
             Gender = appUser.Gender,
             PhotoUrl = appUser.Photos?.FirstOrDefault(p => p.IsMain)?.Url,
