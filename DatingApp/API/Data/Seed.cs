@@ -21,7 +21,6 @@ public class Seed
         foreach (var user in users)
         {
             using var hmac = new HMACSHA512();
-            user.UserName = user.UserName.ToLower();
             dataContext.Users.Add(user);
         }
         await dataContext.SaveChangesAsync();

@@ -23,7 +23,8 @@ public class MessagesController(IMessagesRepository messagesRepository, IUserRep
         var sender = await userRepository.GetUserByUsernameAsync(username);
         var recipient = await userRepository.GetUserByUsernameAsync(createMessageDTO.RecipientUsername.ToLower());
 
-        if (sender == null || recipient == null) return BadRequest("Either the sender or recipient does not exist");
+        if (sender == null || recipient == null ||
+        sender.UserName == null || recipient.UserName == null) return BadRequest("Either the sender or recipient does not exist");
 
         var newMessage = new Message
         {
@@ -78,7 +79,7 @@ public class MessagesController(IMessagesRepository messagesRepository, IUserRep
     {
         var currentUsername = User.GetUsername();
         var recipient = await userRepository.GetUserByUsernameAsync(recipientUsername);
-        if (currentUsername == null || recipient == null) return NotFound();
+        if (currentUsername == null || recipient == null || recipient.UserName == null) return NotFound();
         recipientUsername = recipient.UserName;
         return Ok(await messagesRepository.GetMessageThread(currentUsername, recipientUsername));
     }

@@ -35,7 +35,7 @@ public class AccountController(DataContext dataContext, IMapper mapper) : BaseAp
     {
         var appUser = await dataContext.Users.Include(p => p.Photos).FirstOrDefaultAsync(x => x.UserName == loginDTO.Username.ToLower());
 
-        if (appUser == null)
+        if (appUser == null || appUser.UserName == null)
             return Unauthorized("Invalid username!");
 
         return new UserDTO
@@ -49,6 +49,6 @@ public class AccountController(DataContext dataContext, IMapper mapper) : BaseAp
     }
     private async Task<bool> UserExists(string username)
     {
-        return await dataContext.Users.AnyAsync(x => x.UserName.ToLower() == username.ToLower());
+        return await dataContext.Users.AnyAsync(x => x.NormalizedUserName == username.ToUpper());
     }
 }
