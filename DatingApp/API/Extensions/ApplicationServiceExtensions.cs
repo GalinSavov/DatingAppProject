@@ -2,6 +2,7 @@ using API.Data;
 using API.Helpers;
 using API.Interfaces;
 using API.Services;
+using API.SignalR;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Extensions;
@@ -17,6 +18,7 @@ public static class ApplicationServiceExtensions
         services.AddScoped<ILikesRepository, LikesRepository>();
         services.AddScoped<IMessagesRepository, MessagesRepository>();
         services.AddScoped<IPhotoService, PhotoService>();
+        services.AddSignalR();
         services.AddScoped<LogUserActivity>();
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         services.Configure<CloudinarySettings>(configuration.GetSection("CloudinarySettings"));
