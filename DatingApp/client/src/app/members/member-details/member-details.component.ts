@@ -9,6 +9,7 @@ import { TimeAgoCustomPipe } from '../../time-ago-custom.pipe';
 import { MemberMessagesComponent } from '../member-messages/member-messages.component';
 import { Message } from '../../_models/message';
 import { MessagesService } from '../../_services/messages.service';
+import { PresenceService } from '../../_services/presence.service';
 @Component({
   selector: 'app-member-details',
   standalone: true,
@@ -30,6 +31,7 @@ export class MemberDetailsComponent implements OnInit {
   images: GalleryItem[] = [];
   messages: Message[] = [];
   private messagesService = inject(MessagesService);
+  presenceService = inject(PresenceService);
 
   ngOnInit(): void {
     this.getMemberFromRouteResolver();
