@@ -1,10 +1,14 @@
+using API.Data;
+using API.DTOs;
+using API.Entities;
 using API.Extensions;
 using API.Interfaces;
+using AutoMapper;
 using Microsoft.AspNetCore.SignalR;
 
 namespace API.SignalR;
 
-public class MessageHub(IMessagesRepository messagesRepository) : Hub
+public class MessageHub(IMessagesRepository messagesRepository, IUserRepository userRepository, IMapper mapper) : Hub
 {
     public async override Task OnConnectedAsync()
     {
@@ -28,5 +32,33 @@ public class MessageHub(IMessagesRepository messagesRepository) : Hub
             return caller + "-" + other;
         else
             return other + "-" + caller;
+    }
+    public async Task SendMessage(CreateMessageDTO createMessageDTO)
+    {
+        var httpContext = Context?.GetHttpContext();
+        var username = Context?.User?.GetUsername() ?? throw new Exception("Could not get user");
+        if (username == createMessageDTO.RecipientUsername.ToLower()) throw new HubException("You cannot message yourself");
+
+        var sender = await userRepository.GetUserByUsernameAsync(username);
+        var recipient = await userRepository.GetUserByUsernameAsync(createMessageDTO.RecipientUsername);
+
+        if (sender == null || recipient == null ||
+        sender.UserName == null || recipient.UserName == null) throw new HubException("Either the sender or recipient does not exist");
+
+        var newMessage = new Message
+        {
+            Sender = sender,
+            Recipient = recipient,
+            SenderUsername = sender.UserName,
+            RecipientUsername = recipient.UserName,
+            Content = createMessageDTO.Content,
+        };
+        messagesRepository.Add(newMessage);
+        if (await messagesRepository.SaveAllAsync())
+        {
+            var groupName = GetGroupName(sender.UserName, recipient.UserName);
+            await Clients.Group(groupName).SendAsync("NewMessage", mapper.Map<MessageDTO>(newMessage));
+        }
+
     }
 }
