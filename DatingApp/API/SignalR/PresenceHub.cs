@@ -3,15 +3,23 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace API.SignalR;
 
-public class PresenceHub : Hub
+public class PresenceHub(PresenceTracker presenceTracker) : Hub
 {
     public override async Task OnConnectedAsync()
     {
-        await Clients.Others.SendAsync("User is online!", Context.User?.GetUsername());
+        if (Context.User == null) throw new HubException("Can not get user from Hub");
+        await presenceTracker.UserConnected(Context.User.GetUsername(), Context.ConnectionId);
+        await Clients.Others.SendAsync("UserIsOnline", Context.User?.GetUsername());
+        var currentUsers = await presenceTracker.GetOnlineUsers();
+        await Clients.All.SendAsync("GetOnlineUsers", currentUsers);
     }
     public override async Task OnDisconnectedAsync(Exception? exception)
     {
-        await Clients.Others.SendAsync("User is offline!", Context.User?.GetUsername());
+        if (Context.User == null) throw new HubException("Can not get user from Hub");
+        await presenceTracker.UserDisconnected(Context.User.GetUsername(), Context.ConnectionId);
+        await Clients.Others.SendAsync("UserIsOffline", Context.User?.GetUsername());
+        var currentUsers = await presenceTracker.GetOnlineUsers();
+        await Clients.All.SendAsync("GetOnlineUsers", currentUsers);
         await base.OnDisconnectedAsync(exception);
     }
 }

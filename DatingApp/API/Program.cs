@@ -16,7 +16,7 @@ app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localho
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
-app.MapHub<PresenceHub>("hub/presence");
+app.MapHub<PresenceHub>("hubs/presence");
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
 

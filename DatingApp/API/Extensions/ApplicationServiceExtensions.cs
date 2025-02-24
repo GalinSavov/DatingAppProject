@@ -20,6 +20,7 @@ public static class ApplicationServiceExtensions
         services.AddScoped<IPhotoService, PhotoService>();
         services.AddSignalR();
         services.AddScoped<LogUserActivity>();
+        services.AddSingleton<PresenceTracker>();
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         services.Configure<CloudinarySettings>(configuration.GetSection("CloudinarySettings"));
 
