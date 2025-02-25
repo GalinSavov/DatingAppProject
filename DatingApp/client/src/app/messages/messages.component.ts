@@ -6,6 +6,7 @@ import { TimeAgoCustomPipe } from '../time-ago-custom.pipe';
 import { Message } from '../_models/message';
 import { RouterLink } from '@angular/router';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { PresenceService } from '../_services/presence.service';
 
 @Component({
   selector: 'app-messages',

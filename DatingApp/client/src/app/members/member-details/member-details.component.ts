@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MemberService } from '../../_services/member.service';
 import { Member } from '../../_models/member';
 import { ActivatedRoute } from '@angular/router';
@@ -10,6 +10,7 @@ import { MemberMessagesComponent } from '../member-messages/member-messages.comp
 import { Message } from '../../_models/message';
 import { MessagesService } from '../../_services/messages.service';
 import { PresenceService } from '../../_services/presence.service';
+import { AccountService } from '../../_services/account.service';
 @Component({
   selector: 'app-member-details',
   standalone: true,
@@ -23,15 +24,15 @@ import { PresenceService } from '../../_services/presence.service';
   templateUrl: './member-details.component.html',
   styleUrl: './member-details.component.css',
 })
-export class MemberDetailsComponent implements OnInit {
+export class MemberDetailsComponent implements OnInit, OnDestroy {
   @ViewChild('memberTabs', { static: true }) memberTabs?: TabsetComponent;
   activeTab?: TabDirective;
   private route = inject(ActivatedRoute);
   member: Member = {} as Member;
   images: GalleryItem[] = [];
-  messages: Message[] = [];
   private messagesService = inject(MessagesService);
   presenceService = inject(PresenceService);
+  private accountService = inject(AccountService);
 
   ngOnInit(): void {
     this.getMemberFromRouteResolver();
@@ -40,6 +41,9 @@ export class MemberDetailsComponent implements OnInit {
         params['tab'] && this.selectTab(params['tab']);
       },
     });
+  }
+  ngOnDestroy(): void {
+    this.messagesService.stopHubConnection();
   }
   getMemberFromRouteResolver() {
     this.route.data.subscribe({
@@ -64,19 +68,16 @@ export class MemberDetailsComponent implements OnInit {
 
   onTabActivated(data: TabDirective) {
     this.activeTab = data;
-    if (
-      this.activeTab.heading === 'Messages' &&
-      this.messages.length === 0 &&
-      this.member
-    ) {
-      this.messagesService.getMessageThread(this.member.username).subscribe({
-        next: (response) => {
-          this.messages = response;
-        },
-      });
+    if (this.activeTab.heading === 'Messages' && this.member) {
+      this.getMessageThread();
+    } else {
+      this.messagesService.stopHubConnection();
     }
   }
-  onUpdateMessages(event: Message) {
-    this.messages.push(event);
+  getMessageThread() {
+    const user = this.accountService.currentUser();
+    if (user === null) return;
+    this.messagesService.createHubConnection(user, this.member.username);
+    //console.log(this.messagesService.messageThread());
   }
 }

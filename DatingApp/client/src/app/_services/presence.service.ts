@@ -7,7 +7,6 @@ import {
 } from '@microsoft/signalr';
 import { ToastrService } from 'ngx-toastr';
 import { User } from '../_models/user';
-
 @Injectable({
   providedIn: 'root',
 })
