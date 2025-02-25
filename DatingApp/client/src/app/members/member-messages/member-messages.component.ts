@@ -26,10 +26,15 @@ export class MemberMessagesComponent {
   sendMessage() {
     this.messagesService
       .sendMessage(this.username(), this.messageContent)
-      .subscribe({
-        next: (message) => {
-          this.messageForm?.reset();
-        },
+      .then(() => {
+        this.messageForm?.reset();
+      })
+      .catch((error) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('No error found in SignalR');
+        }
       });
   }
 }

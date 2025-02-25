@@ -27,15 +27,11 @@ public class MessageHub(IMessagesRepository messagesRepository, IUserRepository 
     }
     private string GetGroupName(string caller, string? other)
     {
-        var compareString = string.CompareOrdinal(caller, other);
-        if (compareString == -1)
-            return caller + "-" + other;
-        else
-            return other + "-" + caller;
+        var compareString = string.CompareOrdinal(caller, other) < 0;
+        return compareString ? $"{caller}-{other}" : $"{other}-{caller}";
     }
     public async Task SendMessage(CreateMessageDTO createMessageDTO)
     {
-        var httpContext = Context?.GetHttpContext();
         var username = Context?.User?.GetUsername() ?? throw new Exception("Could not get user");
         if (username == createMessageDTO.RecipientUsername.ToLower()) throw new HubException("You cannot message yourself");
 
