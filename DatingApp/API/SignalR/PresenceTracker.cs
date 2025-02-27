@@ -42,4 +42,26 @@ public class PresenceTracker
         }
         return Task.FromResult(onlineUsers);
     }
+    public static Task<List<string>> GetConnectionsForUser(string username)
+    {
+        List<string> connectionIDsForUser = [];
+        // if (OnlineUsers.TryGetValue(username, out var userConnections))
+        // {
+        //     lock (OnlineUsers)
+        //     {
+        //         connectionIDsForUser = userConnections.ToList();
+        //     }
+        // }
+        if (OnlineUsers.ContainsKey(username))
+        {
+            lock (OnlineUsers)
+            {
+                foreach (var connectionID in OnlineUsers[username])
+                {
+                    connectionIDsForUser.Add(connectionID);
+                }
+            }
+        }
+        return Task.FromResult(connectionIDsForUser);
+    }
 }
