@@ -15,18 +15,14 @@ public class MessagesRepository(DataContext dataContext, IMapper mapper) : IMess
     {
         dataContext.Messages.Add(message);
     }
-
     public void Delete(Message message)
     {
         dataContext.Messages.Remove(message);
     }
-
     public async Task<Message?> GetMessageAsync(int id)
     {
         return await dataContext.Messages.FindAsync(id);
     }
-
-
     public async Task<PagedList<MessageDTO>> GetMessagesForUserAsync(MessageParams messageParams)
     {
         var query = dataContext.Messages.OrderByDescending(x => x.MessageSent).AsQueryable();
@@ -40,7 +36,6 @@ public class MessagesRepository(DataContext dataContext, IMapper mapper) : IMess
 
         return await PagedList<MessageDTO>.CreateAsync(messages, messageParams.ItemsPerPage, messageParams.CurrentPageNumber);
     }
-
     public async Task<IEnumerable<MessageDTO>> GetMessageThread(string currentUserUsername, string recipientUsername)
     {
         var messages = await dataContext.Messages.
@@ -59,7 +54,23 @@ public class MessagesRepository(DataContext dataContext, IMapper mapper) : IMess
         }
         return mapper.Map<IEnumerable<MessageDTO>>(messages);
     }
+    public void AddMessageGroup(Group group)
+    {
+        dataContext.Groups.Add(group);
+    }
+    public void RemoveConnection(Connection connection)
+    {
+        dataContext.Connections.Remove(connection);
+    }
+    public async Task<Group?> GetMessageGroup(string groupName)
+    {
+        return await dataContext.Groups.Include(x => x.Connections).FirstOrDefaultAsync(x => x.Name == groupName);
+    }
 
+    public async Task<Connection?> GetMessageConnection(string connectionId)
+    {
+        return await dataContext.Connections.FindAsync(connectionId);
+    }
     public async Task<bool> SaveAllAsync()
     {
         return await dataContext.SaveChangesAsync() > 0;
