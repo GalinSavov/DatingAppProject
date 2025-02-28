@@ -39,11 +39,10 @@ public class MessagesRepository(DataContext dataContext, IMapper mapper) : IMess
     public async Task<IEnumerable<MessageDTO>> GetMessageThread(string currentUserUsername, string recipientUsername)
     {
         var messages = await dataContext.Messages.
-        Include(x => x.Sender).ThenInclude(x => x.Photos).
-        Include(x => x.Recipient).ThenInclude(x => x.Photos).
         Where(x => x.SenderUsername == currentUserUsername && x.RecipientUsername == recipientUsername && !x.SenderDeleted ||
         x.RecipientUsername == currentUserUsername && x.SenderUsername == recipientUsername && !x.RecipientDeleted).
         OrderBy(x => x.MessageSent).
+        ProjectTo<MessageDTO>(mapper.ConfigurationProvider).
         ToListAsync();
 
         var unreadMessages = messages.Where(x => x.DateRead == null && x.RecipientUsername == currentUserUsername).ToList();
@@ -52,7 +51,7 @@ public class MessagesRepository(DataContext dataContext, IMapper mapper) : IMess
             unreadMessages.ForEach(x => x.DateRead = DateTime.UtcNow);
             await dataContext.SaveChangesAsync();
         }
-        return mapper.Map<IEnumerable<MessageDTO>>(messages);
+        return messages;
     }
     public void AddMessageGroup(Group group)
     {
@@ -74,5 +73,10 @@ public class MessagesRepository(DataContext dataContext, IMapper mapper) : IMess
     public async Task<bool> SaveAllAsync()
     {
         return await dataContext.SaveChangesAsync() > 0;
+    }
+
+    public async Task<Group?> GetGroupForConnection(string connectionId)
+    {
+        return await dataContext.Groups.Include(x => x.Connections).Where(x => x.Connections.Any(c => c.ConnectionId == connectionId)).FirstOrDefaultAsync();
     }
 }

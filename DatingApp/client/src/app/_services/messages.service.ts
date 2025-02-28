@@ -10,6 +10,8 @@ import {
   HubConnectionState,
 } from '@microsoft/signalr';
 import { User } from '../_models/user';
+import { group } from '@angular/animations';
+import { Group } from '../_models/group';
 
 @Injectable({
   providedIn: 'root',
@@ -35,6 +37,18 @@ export class MessagesService {
     this.hubConnection.on('NewMessage', (newMessage) => {
       this.messageThread.update((messages) => [...messages, newMessage]);
       console.log(newMessage);
+    });
+    this.hubConnection.on('UpdatedGroup', (group: Group) => {
+      if (group.connections.some((x) => x.username === otherUser)) {
+        this.messageThread.update((messages) => {
+          messages.forEach((message) => {
+            if (!message.dateRead) {
+              message.dateRead = new Date(Date.now());
+            }
+          });
+          return messages;
+        });
+      }
     });
   }
   stopHubConnection() {

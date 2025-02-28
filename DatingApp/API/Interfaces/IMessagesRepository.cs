@@ -16,4 +16,5 @@ public interface IMessagesRepository
     void RemoveConnection(Connection connection);
     Task<Group?> GetMessageGroup(string groupName);
     Task<Connection?> GetMessageConnection(string connectionId);
+    Task<Group?> GetGroupForConnection(string connectionId);
 }
