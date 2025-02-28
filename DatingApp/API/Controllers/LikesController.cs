@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
-public class LikesController(ILikesRepository likesRepository, IUserRepository userRepository) : BaseApiController
+public class LikesController(IUnitOfWork unitOfWork) : BaseApiController
 {
     [HttpPost("{targetUserId:int}")]
     public async Task<ActionResult> ToggleLike(int targetUserId)
@@ -15,10 +15,10 @@ public class LikesController(ILikesRepository likesRepository, IUserRepository u
         var sourceUserId = User.GetId();
         if (sourceUserId == targetUserId) return BadRequest("Can not like your own profile!");
 
-        var existingLike = await likesRepository.GetUserLike(sourceUserId, targetUserId);
+        var existingLike = await unitOfWork.LikesRepository.GetUserLike(sourceUserId, targetUserId);
         if (existingLike != null)
         {
-            likesRepository.DeleteLike(existingLike);
+            unitOfWork.LikesRepository.DeleteLike(existingLike);
         }
         else
         {
@@ -27,35 +27,35 @@ public class LikesController(ILikesRepository likesRepository, IUserRepository u
                 SourceUserId = sourceUserId,
                 TargetUserId = targetUserId
             };
-            likesRepository.AddLike(like);
+            unitOfWork.LikesRepository.AddLike(like);
         }
 
-        if (await likesRepository.SaveChanges()) return Ok();
+        if (await unitOfWork.Complete()) return Ok();
         return BadRequest("Failed to update the toggle of a like");
     }
 
     [HttpGet("get-user-like")]
     public async Task<UserLike?> GetUserLike(int sourceId, int targetId)
     {
-        var sourceUser = userRepository.GetUserByIdAsync(sourceId);
-        var targetUser = userRepository.GetUserByIdAsync(targetId);
+        var sourceUser = unitOfWork.UserRepository.GetUserByIdAsync(sourceId);
+        var targetUser = unitOfWork.UserRepository.GetUserByIdAsync(targetId);
         if (sourceUser == null || targetUser == null || sourceId != targetId) return new UserLike();
 
-        var userLike = likesRepository.GetUserLike(sourceUser.Id, targetUser.Id);
+        var userLike = unitOfWork.LikesRepository.GetUserLike(sourceUser.Id, targetUser.Id);
         return await userLike;
     }
     [HttpGet("list")]
     public async Task<ActionResult<IEnumerable<int>>> GetCurrentUserLikeIds()
     {
         var currentUserID = User.GetId();
-        var currentUserLikeIds = likesRepository.GetCurrentUserLikeIds(currentUserID);
+        var currentUserLikeIds = unitOfWork.LikesRepository.GetCurrentUserLikeIds(currentUserID);
         return Ok(await currentUserLikeIds);
     }
     [HttpGet]
     public async Task<ActionResult<IEnumerable<MemberDTO>>> GetUserLikes([FromQuery] LikesParams likesParams)
     {
         likesParams.UserId = User.GetId();
-        var users = await likesRepository.GetUserLikes(likesParams);
+        var users = await unitOfWork.LikesRepository.GetUserLikes(likesParams);
         Response.AddPaginationHeader(users);
         return Ok(users);
     }

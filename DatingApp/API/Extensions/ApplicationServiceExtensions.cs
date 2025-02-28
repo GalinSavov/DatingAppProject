@@ -18,6 +18,7 @@ public static class ApplicationServiceExtensions
         services.AddScoped<ILikesRepository, LikesRepository>();
         services.AddScoped<IMessagesRepository, MessagesRepository>();
         services.AddScoped<IPhotoService, PhotoService>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddSignalR();
         services.AddScoped<LogUserActivity>();
         services.AddSingleton<PresenceTracker>();

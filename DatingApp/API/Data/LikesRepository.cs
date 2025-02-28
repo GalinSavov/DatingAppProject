@@ -15,13 +15,11 @@ public class LikesRepository(DataContext dataContext, IMapper mapper) : ILikesRe
     public void AddLike(UserLike like)
     {
         dataContext.Likes.Add(like);
-        //await SaveChanges();
     }
 
     public void DeleteLike(UserLike like)
     {
         dataContext.Likes.Remove(like);
-        //await SaveChanges();
     }
 
     public async Task<IEnumerable<int>> GetCurrentUserLikeIds(int currentUserId)
@@ -62,9 +60,4 @@ public class LikesRepository(DataContext dataContext, IMapper mapper) : ILikesRe
         return await PagedList<MemberDTO>.CreateAsync(query, likesParams.ItemsPerPage, likesParams.CurrentPageNumber);
     }
 
-    public async Task<bool> SaveChanges()
-    {
-        if (await dataContext.SaveChangesAsync() > 0) return true;
-        return false;
-    }
 }

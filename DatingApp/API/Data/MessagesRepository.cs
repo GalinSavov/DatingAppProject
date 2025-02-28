@@ -49,7 +49,6 @@ public class MessagesRepository(DataContext dataContext, IMapper mapper) : IMess
         if (unreadMessages.Count > 0)
         {
             unreadMessages.ForEach(x => x.DateRead = DateTime.UtcNow);
-            await dataContext.SaveChangesAsync();
         }
         return messages;
     }
@@ -70,11 +69,6 @@ public class MessagesRepository(DataContext dataContext, IMapper mapper) : IMess
     {
         return await dataContext.Connections.FindAsync(connectionId);
     }
-    public async Task<bool> SaveAllAsync()
-    {
-        return await dataContext.SaveChangesAsync() > 0;
-    }
-
     public async Task<Group?> GetGroupForConnection(string connectionId)
     {
         return await dataContext.Groups.Include(x => x.Connections).Where(x => x.Connections.Any(c => c.ConnectionId == connectionId)).FirstOrDefaultAsync();
