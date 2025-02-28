@@ -1,5 +1,4 @@
 import { Component, inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { MemberService } from '../../_services/member.service';
 import { Member } from '../../_models/member';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TabDirective, TabsetComponent, TabsModule } from 'ngx-bootstrap/tabs';
@@ -7,7 +6,6 @@ import { GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { DatePipe } from '@angular/common';
 import { TimeAgoCustomPipe } from '../../time-ago-custom.pipe';
 import { MemberMessagesComponent } from '../member-messages/member-messages.component';
-import { Message } from '../../_models/message';
 import { MessagesService } from '../../_services/messages.service';
 import { PresenceService } from '../../_services/presence.service';
 import { AccountService } from '../../_services/account.service';
@@ -83,7 +81,6 @@ export class MemberDetailsComponent implements OnInit, OnDestroy {
       });
     }
   }
-
   onTabActivated(data: TabDirective) {
     this.activeTab = data;
     this.router.navigate([], {
@@ -101,6 +98,5 @@ export class MemberDetailsComponent implements OnInit, OnDestroy {
     const user = this.accountService.currentUser();
     if (user === null) return;
     this.messagesService.createHubConnection(user, this.member.username);
-    //console.log(this.messagesService.messageThread());
   }
 }
