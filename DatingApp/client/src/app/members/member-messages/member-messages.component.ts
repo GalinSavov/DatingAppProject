@@ -1,4 +1,5 @@
 import {
+  AfterViewChecked,
   Component,
   inject,
   input,
@@ -18,8 +19,9 @@ import { FormsModule, NgForm } from '@angular/forms';
   templateUrl: './member-messages.component.html',
   styleUrl: './member-messages.component.css',
 })
-export class MemberMessagesComponent {
+export class MemberMessagesComponent implements AfterViewChecked {
   @ViewChild('messageForm') messageForm?: NgForm;
+  @ViewChild('scrollMe') scrollContainer?: any;
   messagesService = inject(MessagesService);
   username = input.required<string>();
   messageContent = '';
@@ -28,6 +30,7 @@ export class MemberMessagesComponent {
       .sendMessage(this.username(), this.messageContent)
       .then(() => {
         this.messageForm?.reset();
+        this.scrollToBottom();
       })
       .catch((error) => {
         if (error) {
@@ -36,5 +39,14 @@ export class MemberMessagesComponent {
           console.log('No error found in SignalR');
         }
       });
+  }
+  ngAfterViewChecked(): void {
+    this.scrollToBottom();
+  }
+  private scrollToBottom() {
+    if (this.scrollContainer) {
+      this.scrollContainer.nativeElement.scrollTop =
+        this.scrollContainer.nativeElement.scrollHeight;
+    }
   }
 }
