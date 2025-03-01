@@ -38,19 +38,18 @@ public class MessagesRepository(DataContext dataContext, IMapper mapper) : IMess
     }
     public async Task<IEnumerable<MessageDTO>> GetMessageThread(string currentUserUsername, string recipientUsername)
     {
-        var messages = await dataContext.Messages.
+        var query = dataContext.Messages.
         Where(x => x.SenderUsername == currentUserUsername && x.RecipientUsername == recipientUsername && !x.SenderDeleted ||
         x.RecipientUsername == currentUserUsername && x.SenderUsername == recipientUsername && !x.RecipientDeleted).
-        OrderBy(x => x.MessageSent).
-        ProjectTo<MessageDTO>(mapper.ConfigurationProvider).
-        ToListAsync();
+        OrderBy(x => x.MessageSent).AsQueryable();
 
-        var unreadMessages = messages.Where(x => x.DateRead == null && x.RecipientUsername == currentUserUsername).ToList();
+
+        var unreadMessages = query.Where(x => x.DateRead == null && x.RecipientUsername == currentUserUsername).ToList();
         if (unreadMessages.Count > 0)
         {
             unreadMessages.ForEach(x => x.DateRead = DateTime.UtcNow);
         }
-        return messages;
+        return await query.ProjectTo<MessageDTO>(mapper.ConfigurationProvider).ToListAsync();
     }
     public void AddMessageGroup(Group group)
     {
