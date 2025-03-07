@@ -48,29 +48,29 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>udazme5mhp</Fingerprint>
-      <Integrity>rkLEIhEXrU7jrbalmvwiqt6cgYNGpF2kpaiUcDeLTuA=</Integrity>
+      <Fingerprint>lqg8m47ox2</Fingerprint>
+      <Integrity>QyPTNV78X0+3KVKSWY74zKFKgOqSwKuYqNNzE//zqKM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\main-BVVJTX2M.js'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\main-CZHATQTJ.js'))">
       <SourceType>Package</SourceType>
       <SourceId>API</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/API</BasePath>
-      <RelativePath>main-BVVJTX2M.js</RelativePath>
+      <RelativePath>main-CZHATQTJ.js</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>irczjychqf</Fingerprint>
-      <Integrity>Xuam2xx+nql/3w19GHP55UnM79vy/77p4v8LcOJ7/HU=</Integrity>
+      <Fingerprint>youd0uwsf2</Fingerprint>
+      <Integrity>XuuuI9dY2vHdFQMvnDvgllnN4SYL/GnSka54fCY57vY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\main-BVVJTX2M.js'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\main-CZHATQTJ.js'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\media\fontawesome-webfont-3KIJVIEY.svg'))">
       <SourceType>Package</SourceType>
