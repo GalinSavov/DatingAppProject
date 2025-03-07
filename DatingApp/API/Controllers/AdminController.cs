@@ -41,9 +41,9 @@ public class AdminController(UserManager<AppUser> userManager, IUnitOfWork unitO
     [HttpGet("photos-to-moderate")]
     public async Task<ActionResult> GetPhotosForApproval()
     {
-        var photos = unitOfWork.PhotosRepository.GetUnapprovedPhotos();
+        var photos = await unitOfWork.PhotosRepository.GetUnapprovedPhotos();
         if (photos == null) return BadRequest("Could not retrieve unapproved photos!");
-        return Ok(await photos);
+        return Ok(photos);
     }
     [Authorize(Policy = "ModeratePhotoRole")]
     [HttpPost("approve-photo/{photoId:int}")]

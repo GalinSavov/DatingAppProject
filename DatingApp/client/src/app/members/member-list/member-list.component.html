@@ -1,10 +1,5 @@
 <div class="row">
-  <div class="text-center mt-3">
-    <h2>
-      Your Matches - {{ this.memberService.paginationResult()?.items?.length }}
-    </h2>
-  </div>
-  <div class="containter mt-3">
+  <div class="containter mt-5">
     <form #form="ngForm" class="d-flex mb-3" (submit)="displayMembers()">
       <div class="d-flex mx-2">
         <label class="col-form-label">Age from:</label>
