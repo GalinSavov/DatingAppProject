@@ -309,3 +309,11 @@ C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\bin\
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\bin\Debug\net9.0\API.staticwebassets.runtime.json
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Debug\net9.0\compressed\zzyd6wgwl5-b4z6zwuwkk.gz
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Debug\net9.0\compressed\6x0scahnf1-vagikyz9qx.gz
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Debug\net9.0\compressed\1dpm1p8bmc-udazme5mhp.gz
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Debug\net9.0\compressed\95d4hs8slb-irczjychqf.gz
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Debug\net9.0\compressed\ipsy3anybd-dosqy3kf6t.gz
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Debug\net9.0\compressed\wsenxafarw-39tegmrjtp.gz
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Debug\net9.0\compressed\6704xeuwjy-kv479g63n6.gz

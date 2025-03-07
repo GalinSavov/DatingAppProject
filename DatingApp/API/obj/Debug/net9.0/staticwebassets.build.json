@@ -1,12 +1,2917 @@
 {
   "Version": 1,
-  "Hash": "A5c6GKfqW+kOYxX7+ezU9WKq8ts6/mK8f4alHUBjdmk=",
+  "Hash": "3LCy7EL2CXpK4fiylGs1ax3S9cUpqBbzUXzd/DRp1cA=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "API\\wwwroot",
+      "Source": "API",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\1dpm1p8bmc-udazme5mhp.gz",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/API",
+      "RelativePath": "index#[.{fingerprint=udazme5mhp}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\index.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "jd6n2f2tbw",
+      "Integrity": "+UHmY92XDXXxuTYMCwmtYzL6BG8Is/KLn++T6pLy/sQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\6704xeuwjy-kv479g63n6.gz",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/API",
+      "RelativePath": "styles-RQUPI42U#[.{fingerprint=kv479g63n6}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\styles-RQUPI42U.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "y81ldd27p9",
+      "Integrity": "klrljOvhlDQXmgMEDSJvzVwEVsrlr5KAOPq4sdgVIOI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\styles-RQUPI42U.css"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/API",
+      "RelativePath": "favicon#[.{fingerprint=vagikyz9qx}]?.ico.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\favicon.ico",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "spc2whqxhc",
+      "Integrity": "4JD5TBkaKkYJVw5DzZh1jKJdCSTQYxpre7fdXrSQ/P8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\95d4hs8slb-irczjychqf.gz",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/API",
+      "RelativePath": "main-BVVJTX2M#[.{fingerprint=irczjychqf}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\main-BVVJTX2M.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "vo05eg5vxr",
+      "Integrity": "QU/ZR22bXQCKgUwFv1QMlvJlygnY2KWu8asgdsMU6fw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\main-BVVJTX2M.js"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\ipsy3anybd-dosqy3kf6t.gz",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/API",
+      "RelativePath": "media/fontawesome-webfont-3KIJVIEY#[.{fingerprint=dosqy3kf6t}]?.svg.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-3KIJVIEY.svg",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "ji388vklnc",
+      "Integrity": "Ndiz6aqS5Z7X6nKG8ELj6j7ZnErv08fM2w3FlT2wNmc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-3KIJVIEY.svg"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\wsenxafarw-39tegmrjtp.gz",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/API",
+      "RelativePath": "polyfills-FFHMD2TL#[.{fingerprint=39tegmrjtp}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\polyfills-FFHMD2TL.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "w4lx0xupn9",
+      "Integrity": "wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\polyfills-FFHMD2TL.js"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\zzyd6wgwl5-b4z6zwuwkk.gz",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/API",
+      "RelativePath": "3rdpartylicenses#[.{fingerprint=b4z6zwuwkk}]?.txt.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\3rdpartylicenses.txt",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "pfzhtf1vad",
+      "Integrity": "W4nFjZRYdPnVMeKAwmk9pMsVAIkW2YXdd1v5FsfUGJY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\3rdpartylicenses.txt"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\3rdpartylicenses.txt",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "3rdpartylicenses#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "b4z6zwuwkk",
+      "Integrity": "S1paCssm/owmFOFtbsKjb5Bwa0IADbOCzTGz3es431c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\3rdpartylicenses.txt"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\favicon.ico",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "favicon#[.{fingerprint}]?.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vagikyz9qx",
+      "Integrity": "+RAr6AKXwFKSB2B75Sd7T5C8qJ1lmI+hdxuRx4lOgV8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\index.html",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "udazme5mhp",
+      "Integrity": "rkLEIhEXrU7jrbalmvwiqt6cgYNGpF2kpaiUcDeLTuA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\main-BVVJTX2M.js",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "main-BVVJTX2M#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "irczjychqf",
+      "Integrity": "Xuam2xx+nql/3w19GHP55UnM79vy/77p4v8LcOJ7/HU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\main-BVVJTX2M.js"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-3KIJVIEY.svg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "media/fontawesome-webfont-3KIJVIEY#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dosqy3kf6t",
+      "Integrity": "rWFXkmwWIrpOHQPUePFUE2hSS/xG9R5C/g2UX37zI+Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\fontawesome-webfont-3KIJVIEY.svg"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-5GKVPAEF.woff2",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "media/fontawesome-webfont-5GKVPAEF#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2hr3gl3r5x",
+      "Integrity": "Kt78vAQefRj88tQXh53FoJmXqmTWdbejxLbOM9oT8/4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\fontawesome-webfont-5GKVPAEF.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-FMJ3VJ65.eot",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "media/fontawesome-webfont-FMJ3VJ65#[.{fingerprint}]?.eot",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pz0qgnv39v",
+      "Integrity": "e/yrbbmdXPvxcFygU23ceFhUMsxfpBu9etDwCQM7KXk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\fontawesome-webfont-FMJ3VJ65.eot"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-RJ6LE7IU.ttf",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "media/fontawesome-webfont-RJ6LE7IU#[.{fingerprint}]?.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yex6mt8az7",
+      "Integrity": "qljzPyOaD7AvXHpsRcBD16msmgkzNYBmlOzW1O3A1qg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\fontawesome-webfont-RJ6LE7IU.ttf"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-Z4ARLA73.woff",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "media/fontawesome-webfont-Z4ARLA73#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "eyrbpue749",
+      "Integrity": "ugxZ3rVFD1y0Gz+TYJ7i0NmVQVh33foiPoqKdTNHTwc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\fontawesome-webfont-Z4ARLA73.woff"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\polyfills-FFHMD2TL.js",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "polyfills-FFHMD2TL#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "39tegmrjtp",
+      "Integrity": "adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\polyfills-FFHMD2TL.js"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\styles-RQUPI42U.css",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "styles-RQUPI42U#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kv479g63n6",
+      "Integrity": "cB36Z8egpSQuYUh+k9H2lC+sVqo8eNhxVyl/lWKtzQ0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\styles-RQUPI42U.css"
+    },
+    {
+      "Identity": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\user.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "user#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5ihs5al52n",
+      "Integrity": "nWSw9JmPgIoXUUXDI/UBkdEhj2zsqD4RI15kcuogM1A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "3rdpartylicenses.b4z6zwuwkk.txt",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\zzyd6wgwl5-b4z6zwuwkk.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000191204589"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5229"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W4nFjZRYdPnVMeKAwmk9pMsVAIkW2YXdd1v5FsfUGJY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"S1paCssm/owmFOFtbsKjb5Bwa0IADbOCzTGz3es431c=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b4z6zwuwkk"
+        },
+        {
+          "Name": "label",
+          "Value": "3rdpartylicenses.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-S1paCssm/owmFOFtbsKjb5Bwa0IADbOCzTGz3es431c="
+        }
+      ]
+    },
+    {
+      "Route": "3rdpartylicenses.b4z6zwuwkk.txt",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\3rdpartylicenses.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28415"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S1paCssm/owmFOFtbsKjb5Bwa0IADbOCzTGz3es431c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b4z6zwuwkk"
+        },
+        {
+          "Name": "label",
+          "Value": "3rdpartylicenses.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-S1paCssm/owmFOFtbsKjb5Bwa0IADbOCzTGz3es431c="
+        }
+      ]
+    },
+    {
+      "Route": "3rdpartylicenses.b4z6zwuwkk.txt.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\zzyd6wgwl5-b4z6zwuwkk.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5229"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W4nFjZRYdPnVMeKAwmk9pMsVAIkW2YXdd1v5FsfUGJY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b4z6zwuwkk"
+        },
+        {
+          "Name": "label",
+          "Value": "3rdpartylicenses.txt.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-W4nFjZRYdPnVMeKAwmk9pMsVAIkW2YXdd1v5FsfUGJY="
+        }
+      ]
+    },
+    {
+      "Route": "3rdpartylicenses.txt",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\zzyd6wgwl5-b4z6zwuwkk.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000191204589"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5229"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W4nFjZRYdPnVMeKAwmk9pMsVAIkW2YXdd1v5FsfUGJY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"S1paCssm/owmFOFtbsKjb5Bwa0IADbOCzTGz3es431c=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-S1paCssm/owmFOFtbsKjb5Bwa0IADbOCzTGz3es431c="
+        }
+      ]
+    },
+    {
+      "Route": "3rdpartylicenses.txt",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\3rdpartylicenses.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28415"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S1paCssm/owmFOFtbsKjb5Bwa0IADbOCzTGz3es431c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-S1paCssm/owmFOFtbsKjb5Bwa0IADbOCzTGz3es431c="
+        }
+      ]
+    },
+    {
+      "Route": "3rdpartylicenses.txt.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\zzyd6wgwl5-b4z6zwuwkk.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5229"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W4nFjZRYdPnVMeKAwmk9pMsVAIkW2YXdd1v5FsfUGJY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-W4nFjZRYdPnVMeKAwmk9pMsVAIkW2YXdd1v5FsfUGJY="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.ico",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000237360551"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4212"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4JD5TBkaKkYJVw5DzZh1jKJdCSTQYxpre7fdXrSQ/P8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Jan 2025 09:49:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"+RAr6AKXwFKSB2B75Sd7T5C8qJ1lmI+hdxuRx4lOgV8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+RAr6AKXwFKSB2B75Sd7T5C8qJ1lmI+hdxuRx4lOgV8="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.ico",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\favicon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15086"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+RAr6AKXwFKSB2B75Sd7T5C8qJ1lmI+hdxuRx4lOgV8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Jan 2025 09:49:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+RAr6AKXwFKSB2B75Sd7T5C8qJ1lmI+hdxuRx4lOgV8="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.ico.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4212"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4JD5TBkaKkYJVw5DzZh1jKJdCSTQYxpre7fdXrSQ/P8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Jan 2025 09:49:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4JD5TBkaKkYJVw5DzZh1jKJdCSTQYxpre7fdXrSQ/P8="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.vagikyz9qx.ico",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000237360551"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4212"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4JD5TBkaKkYJVw5DzZh1jKJdCSTQYxpre7fdXrSQ/P8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Jan 2025 09:49:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"+RAr6AKXwFKSB2B75Sd7T5C8qJ1lmI+hdxuRx4lOgV8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vagikyz9qx"
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.ico"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+RAr6AKXwFKSB2B75Sd7T5C8qJ1lmI+hdxuRx4lOgV8="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.vagikyz9qx.ico",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\favicon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15086"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+RAr6AKXwFKSB2B75Sd7T5C8qJ1lmI+hdxuRx4lOgV8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Jan 2025 09:49:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vagikyz9qx"
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.ico"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+RAr6AKXwFKSB2B75Sd7T5C8qJ1lmI+hdxuRx4lOgV8="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.vagikyz9qx.ico.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\6x0scahnf1-vagikyz9qx.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4212"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4JD5TBkaKkYJVw5DzZh1jKJdCSTQYxpre7fdXrSQ/P8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Jan 2025 09:49:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vagikyz9qx"
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.ico.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4JD5TBkaKkYJVw5DzZh1jKJdCSTQYxpre7fdXrSQ/P8="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\1dpm1p8bmc-udazme5mhp.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.003311258278"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "301"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+UHmY92XDXXxuTYMCwmtYzL6BG8Is/KLn++T6pLy/sQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"rkLEIhEXrU7jrbalmvwiqt6cgYNGpF2kpaiUcDeLTuA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rkLEIhEXrU7jrbalmvwiqt6cgYNGpF2kpaiUcDeLTuA="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "468"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rkLEIhEXrU7jrbalmvwiqt6cgYNGpF2kpaiUcDeLTuA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rkLEIhEXrU7jrbalmvwiqt6cgYNGpF2kpaiUcDeLTuA="
+        }
+      ]
+    },
+    {
+      "Route": "index.html.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\1dpm1p8bmc-udazme5mhp.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "301"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+UHmY92XDXXxuTYMCwmtYzL6BG8Is/KLn++T6pLy/sQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+UHmY92XDXXxuTYMCwmtYzL6BG8Is/KLn++T6pLy/sQ="
+        }
+      ]
+    },
+    {
+      "Route": "index.udazme5mhp.html",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\1dpm1p8bmc-udazme5mhp.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.003311258278"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "301"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+UHmY92XDXXxuTYMCwmtYzL6BG8Is/KLn++T6pLy/sQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"rkLEIhEXrU7jrbalmvwiqt6cgYNGpF2kpaiUcDeLTuA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "udazme5mhp"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rkLEIhEXrU7jrbalmvwiqt6cgYNGpF2kpaiUcDeLTuA="
+        }
+      ]
+    },
+    {
+      "Route": "index.udazme5mhp.html",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "468"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rkLEIhEXrU7jrbalmvwiqt6cgYNGpF2kpaiUcDeLTuA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "udazme5mhp"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rkLEIhEXrU7jrbalmvwiqt6cgYNGpF2kpaiUcDeLTuA="
+        }
+      ]
+    },
+    {
+      "Route": "index.udazme5mhp.html.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\1dpm1p8bmc-udazme5mhp.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "301"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+UHmY92XDXXxuTYMCwmtYzL6BG8Is/KLn++T6pLy/sQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "udazme5mhp"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+UHmY92XDXXxuTYMCwmtYzL6BG8Is/KLn++T6pLy/sQ="
+        }
+      ]
+    },
+    {
+      "Route": "main-BVVJTX2M.irczjychqf.js",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\95d4hs8slb-irczjychqf.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000003894642"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "256762"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QU/ZR22bXQCKgUwFv1QMlvJlygnY2KWu8asgdsMU6fw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Xuam2xx+nql/3w19GHP55UnM79vy/77p4v8LcOJ7/HU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "irczjychqf"
+        },
+        {
+          "Name": "label",
+          "Value": "main-BVVJTX2M.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xuam2xx+nql/3w19GHP55UnM79vy/77p4v8LcOJ7/HU="
+        }
+      ]
+    },
+    {
+      "Route": "main-BVVJTX2M.irczjychqf.js",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\main-BVVJTX2M.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "979560"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xuam2xx+nql/3w19GHP55UnM79vy/77p4v8LcOJ7/HU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "irczjychqf"
+        },
+        {
+          "Name": "label",
+          "Value": "main-BVVJTX2M.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xuam2xx+nql/3w19GHP55UnM79vy/77p4v8LcOJ7/HU="
+        }
+      ]
+    },
+    {
+      "Route": "main-BVVJTX2M.irczjychqf.js.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\95d4hs8slb-irczjychqf.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "256762"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QU/ZR22bXQCKgUwFv1QMlvJlygnY2KWu8asgdsMU6fw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "irczjychqf"
+        },
+        {
+          "Name": "label",
+          "Value": "main-BVVJTX2M.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QU/ZR22bXQCKgUwFv1QMlvJlygnY2KWu8asgdsMU6fw="
+        }
+      ]
+    },
+    {
+      "Route": "main-BVVJTX2M.js",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\95d4hs8slb-irczjychqf.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000003894642"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "256762"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QU/ZR22bXQCKgUwFv1QMlvJlygnY2KWu8asgdsMU6fw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Xuam2xx+nql/3w19GHP55UnM79vy/77p4v8LcOJ7/HU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xuam2xx+nql/3w19GHP55UnM79vy/77p4v8LcOJ7/HU="
+        }
+      ]
+    },
+    {
+      "Route": "main-BVVJTX2M.js",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\main-BVVJTX2M.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "979560"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xuam2xx+nql/3w19GHP55UnM79vy/77p4v8LcOJ7/HU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xuam2xx+nql/3w19GHP55UnM79vy/77p4v8LcOJ7/HU="
+        }
+      ]
+    },
+    {
+      "Route": "main-BVVJTX2M.js.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\95d4hs8slb-irczjychqf.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "256762"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QU/ZR22bXQCKgUwFv1QMlvJlygnY2KWu8asgdsMU6fw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QU/ZR22bXQCKgUwFv1QMlvJlygnY2KWu8asgdsMU6fw="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-3KIJVIEY.dosqy3kf6t.svg",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\ipsy3anybd-dosqy3kf6t.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000007344301"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136159"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ndiz6aqS5Z7X6nKG8ELj6j7ZnErv08fM2w3FlT2wNmc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"rWFXkmwWIrpOHQPUePFUE2hSS/xG9R5C/g2UX37zI+Q=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dosqy3kf6t"
+        },
+        {
+          "Name": "label",
+          "Value": "media/fontawesome-webfont-3KIJVIEY.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rWFXkmwWIrpOHQPUePFUE2hSS/xG9R5C/g2UX37zI+Q="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-3KIJVIEY.dosqy3kf6t.svg",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-3KIJVIEY.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "444379"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rWFXkmwWIrpOHQPUePFUE2hSS/xG9R5C/g2UX37zI+Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dosqy3kf6t"
+        },
+        {
+          "Name": "label",
+          "Value": "media/fontawesome-webfont-3KIJVIEY.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rWFXkmwWIrpOHQPUePFUE2hSS/xG9R5C/g2UX37zI+Q="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-3KIJVIEY.dosqy3kf6t.svg.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\ipsy3anybd-dosqy3kf6t.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136159"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ndiz6aqS5Z7X6nKG8ELj6j7ZnErv08fM2w3FlT2wNmc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dosqy3kf6t"
+        },
+        {
+          "Name": "label",
+          "Value": "media/fontawesome-webfont-3KIJVIEY.svg.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ndiz6aqS5Z7X6nKG8ELj6j7ZnErv08fM2w3FlT2wNmc="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-3KIJVIEY.svg",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\ipsy3anybd-dosqy3kf6t.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000007344301"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136159"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ndiz6aqS5Z7X6nKG8ELj6j7ZnErv08fM2w3FlT2wNmc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"rWFXkmwWIrpOHQPUePFUE2hSS/xG9R5C/g2UX37zI+Q=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rWFXkmwWIrpOHQPUePFUE2hSS/xG9R5C/g2UX37zI+Q="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-3KIJVIEY.svg",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-3KIJVIEY.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "444379"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rWFXkmwWIrpOHQPUePFUE2hSS/xG9R5C/g2UX37zI+Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rWFXkmwWIrpOHQPUePFUE2hSS/xG9R5C/g2UX37zI+Q="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-3KIJVIEY.svg.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\ipsy3anybd-dosqy3kf6t.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136159"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ndiz6aqS5Z7X6nKG8ELj6j7ZnErv08fM2w3FlT2wNmc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ndiz6aqS5Z7X6nKG8ELj6j7ZnErv08fM2w3FlT2wNmc="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-5GKVPAEF.2hr3gl3r5x.woff2",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-5GKVPAEF.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77160"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Kt78vAQefRj88tQXh53FoJmXqmTWdbejxLbOM9oT8/4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2hr3gl3r5x"
+        },
+        {
+          "Name": "label",
+          "Value": "media/fontawesome-webfont-5GKVPAEF.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Kt78vAQefRj88tQXh53FoJmXqmTWdbejxLbOM9oT8/4="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-5GKVPAEF.woff2",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-5GKVPAEF.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77160"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Kt78vAQefRj88tQXh53FoJmXqmTWdbejxLbOM9oT8/4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Kt78vAQefRj88tQXh53FoJmXqmTWdbejxLbOM9oT8/4="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-FMJ3VJ65.eot",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-FMJ3VJ65.eot",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "165742"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.ms-fontobject"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e/yrbbmdXPvxcFygU23ceFhUMsxfpBu9etDwCQM7KXk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-e/yrbbmdXPvxcFygU23ceFhUMsxfpBu9etDwCQM7KXk="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-FMJ3VJ65.pz0qgnv39v.eot",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-FMJ3VJ65.eot",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "165742"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.ms-fontobject"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e/yrbbmdXPvxcFygU23ceFhUMsxfpBu9etDwCQM7KXk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pz0qgnv39v"
+        },
+        {
+          "Name": "label",
+          "Value": "media/fontawesome-webfont-FMJ3VJ65.eot"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-e/yrbbmdXPvxcFygU23ceFhUMsxfpBu9etDwCQM7KXk="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-RJ6LE7IU.ttf",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-RJ6LE7IU.ttf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "165548"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/x-font-ttf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qljzPyOaD7AvXHpsRcBD16msmgkzNYBmlOzW1O3A1qg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qljzPyOaD7AvXHpsRcBD16msmgkzNYBmlOzW1O3A1qg="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-RJ6LE7IU.yex6mt8az7.ttf",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-RJ6LE7IU.ttf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "165548"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/x-font-ttf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qljzPyOaD7AvXHpsRcBD16msmgkzNYBmlOzW1O3A1qg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yex6mt8az7"
+        },
+        {
+          "Name": "label",
+          "Value": "media/fontawesome-webfont-RJ6LE7IU.ttf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qljzPyOaD7AvXHpsRcBD16msmgkzNYBmlOzW1O3A1qg="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-Z4ARLA73.eyrbpue749.woff",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-Z4ARLA73.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98024"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ugxZ3rVFD1y0Gz+TYJ7i0NmVQVh33foiPoqKdTNHTwc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "eyrbpue749"
+        },
+        {
+          "Name": "label",
+          "Value": "media/fontawesome-webfont-Z4ARLA73.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ugxZ3rVFD1y0Gz+TYJ7i0NmVQVh33foiPoqKdTNHTwc="
+        }
+      ]
+    },
+    {
+      "Route": "media/fontawesome-webfont-Z4ARLA73.woff",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\media\\fontawesome-webfont-Z4ARLA73.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98024"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ugxZ3rVFD1y0Gz+TYJ7i0NmVQVh33foiPoqKdTNHTwc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ugxZ3rVFD1y0Gz+TYJ7i0NmVQVh33foiPoqKdTNHTwc="
+        }
+      ]
+    },
+    {
+      "Route": "polyfills-FFHMD2TL.39tegmrjtp.js",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\wsenxafarw-39tegmrjtp.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000079636856"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12556"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "39tegmrjtp"
+        },
+        {
+          "Name": "label",
+          "Value": "polyfills-FFHMD2TL.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g="
+        }
+      ]
+    },
+    {
+      "Route": "polyfills-FFHMD2TL.39tegmrjtp.js",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\polyfills-FFHMD2TL.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34519"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "39tegmrjtp"
+        },
+        {
+          "Name": "label",
+          "Value": "polyfills-FFHMD2TL.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g="
+        }
+      ]
+    },
+    {
+      "Route": "polyfills-FFHMD2TL.39tegmrjtp.js.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\wsenxafarw-39tegmrjtp.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12556"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "39tegmrjtp"
+        },
+        {
+          "Name": "label",
+          "Value": "polyfills-FFHMD2TL.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw="
+        }
+      ]
+    },
+    {
+      "Route": "polyfills-FFHMD2TL.js",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\wsenxafarw-39tegmrjtp.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000079636856"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12556"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g="
+        }
+      ]
+    },
+    {
+      "Route": "polyfills-FFHMD2TL.js",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\polyfills-FFHMD2TL.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34519"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-adzqBFZD3Q3pmKPNDMu7RrRr/yZRqHpWxzwo6yCOj5g="
+        }
+      ]
+    },
+    {
+      "Route": "polyfills-FFHMD2TL.js.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\wsenxafarw-39tegmrjtp.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12556"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wNJFFxSczIGO97svjP9ishXOSHGLv5Y4VbZ5Mb0PkLw="
+        }
+      ]
+    },
+    {
+      "Route": "styles-RQUPI42U.css",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\6704xeuwjy-kv479g63n6.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000018589779"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "53792"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"klrljOvhlDQXmgMEDSJvzVwEVsrlr5KAOPq4sdgVIOI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"cB36Z8egpSQuYUh+k9H2lC+sVqo8eNhxVyl/lWKtzQ0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cB36Z8egpSQuYUh+k9H2lC+sVqo8eNhxVyl/lWKtzQ0="
+        }
+      ]
+    },
+    {
+      "Route": "styles-RQUPI42U.css",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\styles-RQUPI42U.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "353108"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cB36Z8egpSQuYUh+k9H2lC+sVqo8eNhxVyl/lWKtzQ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cB36Z8egpSQuYUh+k9H2lC+sVqo8eNhxVyl/lWKtzQ0="
+        }
+      ]
+    },
+    {
+      "Route": "styles-RQUPI42U.css.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\6704xeuwjy-kv479g63n6.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "53792"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"klrljOvhlDQXmgMEDSJvzVwEVsrlr5KAOPq4sdgVIOI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-klrljOvhlDQXmgMEDSJvzVwEVsrlr5KAOPq4sdgVIOI="
+        }
+      ]
+    },
+    {
+      "Route": "styles-RQUPI42U.kv479g63n6.css",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\6704xeuwjy-kv479g63n6.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000018589779"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "53792"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"klrljOvhlDQXmgMEDSJvzVwEVsrlr5KAOPq4sdgVIOI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"cB36Z8egpSQuYUh+k9H2lC+sVqo8eNhxVyl/lWKtzQ0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kv479g63n6"
+        },
+        {
+          "Name": "label",
+          "Value": "styles-RQUPI42U.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cB36Z8egpSQuYUh+k9H2lC+sVqo8eNhxVyl/lWKtzQ0="
+        }
+      ]
+    },
+    {
+      "Route": "styles-RQUPI42U.kv479g63n6.css",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\styles-RQUPI42U.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "353108"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cB36Z8egpSQuYUh+k9H2lC+sVqo8eNhxVyl/lWKtzQ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kv479g63n6"
+        },
+        {
+          "Name": "label",
+          "Value": "styles-RQUPI42U.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cB36Z8egpSQuYUh+k9H2lC+sVqo8eNhxVyl/lWKtzQ0="
+        }
+      ]
+    },
+    {
+      "Route": "styles-RQUPI42U.kv479g63n6.css.gz",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\obj\\Debug\\net9.0\\compressed\\6704xeuwjy-kv479g63n6.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "53792"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"klrljOvhlDQXmgMEDSJvzVwEVsrlr5KAOPq4sdgVIOI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 12:28:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kv479g63n6"
+        },
+        {
+          "Name": "label",
+          "Value": "styles-RQUPI42U.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-klrljOvhlDQXmgMEDSJvzVwEVsrlr5KAOPq4sdgVIOI="
+        }
+      ]
+    },
+    {
+      "Route": "user.5ihs5al52n.png",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\user.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2662"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nWSw9JmPgIoXUUXDI/UBkdEhj2zsqD4RI15kcuogM1A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Feb 2025 11:59:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ihs5al52n"
+        },
+        {
+          "Name": "label",
+          "Value": "user.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nWSw9JmPgIoXUUXDI/UBkdEhj2zsqD4RI15kcuogM1A="
+        }
+      ]
+    },
+    {
+      "Route": "user.png",
+      "AssetFile": "C:\\Users\\galsa\\OneDrive\\Desktop\\.NET Project\\DatingAppProject\\DatingApp\\API\\wwwroot\\user.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2662"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nWSw9JmPgIoXUUXDI/UBkdEhj2zsqD4RI15kcuogM1A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Feb 2025 11:59:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nWSw9JmPgIoXUUXDI/UBkdEhj2zsqD4RI15kcuogM1A="
+        }
+      ]
+    }
+  ]
 }
