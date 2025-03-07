@@ -13,6 +13,7 @@ IdentityRoleClaim<int>, IdentityUserToken<int>>(options)
     public DbSet<Message> Messages { get; set; }
     public DbSet<Group> Groups { get; set; }
     public DbSet<Connection> Connections { get; set; }
+    public DbSet<Photo> Photos { get; set; }
 
     override protected void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -44,5 +45,8 @@ IdentityRoleClaim<int>, IdentityUserToken<int>>(options)
         HasOne(user => user.Recipient).
         WithMany(messages => messages.ReceivedMessages).
         OnDelete(DeleteBehavior.Restrict);
+
+        //photo modelling
+        modelBuilder.Entity<Photo>().HasQueryFilter(x => x.IsApproved == true);
     }
 }

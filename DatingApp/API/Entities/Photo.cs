@@ -13,4 +13,6 @@ public class Photo
     //Navigation properties required for relationship with AppUser
     public int AppUserId { get; set; }
     public AppUser AppUser { get; set; } = null!;
+    public bool IsApproved { get; set; }
+
 }

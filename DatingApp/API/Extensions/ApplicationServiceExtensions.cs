@@ -1,4 +1,5 @@
 using API.Data;
+using API.DTOs;
 using API.Helpers;
 using API.Interfaces;
 using API.Services;
@@ -17,6 +18,7 @@ public static class ApplicationServiceExtensions
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<ILikesRepository, LikesRepository>();
         services.AddScoped<IMessagesRepository, MessagesRepository>();
+        services.AddScoped<IPhotosRepository, PhotosRepository>();
         services.AddScoped<IPhotoService, PhotoService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddSignalR();

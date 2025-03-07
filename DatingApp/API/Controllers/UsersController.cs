@@ -27,7 +27,15 @@ public class UsersController(IMapper mapper, IPhotoService photoService, IUnitOf
     [HttpGet("{username}")]
     public async Task<ActionResult<MemberDTO>> GetUser(string username)
     {
-        var user = await unitOfWork.UserRepository.GetMemberByUsernameAsync(username);
+        MemberDTO? user;
+        if (username == User.GetUsername())
+        {
+            user = await unitOfWork.UserRepository.GetMemberByUsernameAsync(username, true);
+        }
+        else
+        {
+            user = await unitOfWork.UserRepository.GetMemberByUsernameAsync(username, false);
+        }
         if (user == null) return NotFound();
         return user;
     }
@@ -51,8 +59,9 @@ public class UsersController(IMapper mapper, IPhotoService photoService, IUnitOf
         {
             Url = result.Url.AbsoluteUri,
             PublicId = result.PublicId,
+            IsApproved = false,
         };
-        if (user.Photos.Count == 0) photo.IsMain = true;
+        //if (user.Photos.Count == 0) photo.IsMain = true;
         user.Photos.Add(photo);
         if (await unitOfWork.Complete()) return CreatedAtAction(nameof(GetUser), new { username = user.UserName }, mapper.Map<PhotoDTO>(photo));
         return BadRequest("Problem adding photo!");
@@ -76,11 +85,11 @@ public class UsersController(IMapper mapper, IPhotoService photoService, IUnitOf
     {
         var user = await unitOfWork.UserRepository.GetUserByUsernameAsync(User.GetUsername());
         if (user == null) return BadRequest("Cannot find user");
-        var photo = user.Photos.FirstOrDefault(p => p.Id == photoId);
+        var photo = await unitOfWork.PhotosRepository.GetPhotoById(photoId);
         if (photo == null || photo.IsMain) return BadRequest("Can not delete that photo");
-        var publicId = photo.PublicId;
-        if (publicId == null) return BadRequest("Public id of photo is null");
-        var result = await photoService.DeletePhotoAsync(publicId);
+        var photoPublicId = photo.PublicId;
+        if (photoPublicId == null) return BadRequest("Public id of photo is null");
+        var result = await photoService.DeletePhotoAsync(photoPublicId);
         if (result.Error != null) return BadRequest(result.Error.Message);
         user.Photos.Remove(photo);
         if (await unitOfWork.Complete()) return Ok();

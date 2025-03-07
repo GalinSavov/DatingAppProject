@@ -33,11 +33,16 @@ public class UserRepository(DataContext dataContext, IMapper mapper) : IUserRepo
     {
         return await dataContext.Users.Include(x => x.Photos).ToListAsync();
     }
-    public async Task<MemberDTO?> GetMemberByUsernameAsync(string username)
+    public async Task<MemberDTO?> GetMemberByUsernameAsync(string username, bool isCurrentUser)
     {
-        return await dataContext.Users.Where(x => x.UserName == username).
+        return isCurrentUser ?
+        await dataContext.Users.Where(x => x.UserName == username).IgnoreQueryFilters().
+        ProjectTo<MemberDTO>(mapper.ConfigurationProvider).
+        SingleOrDefaultAsync() :
+        await dataContext.Users.Where(x => x.UserName == username).
         ProjectTo<MemberDTO>(mapper.ConfigurationProvider).
         SingleOrDefaultAsync();
+
     }
     public async Task<AppUser?> GetUserByIdAsync(int id)
     {
@@ -50,5 +55,9 @@ public class UserRepository(DataContext dataContext, IMapper mapper) : IUserRepo
     public void Update(AppUser appUser)
     {
         dataContext.Entry(appUser).State = EntityState.Modified;
+    }
+    public async Task<AppUser?> GetUserByPhotoId(int photoId)
+    {
+        return await dataContext.Users.Include(x => x.Photos).IgnoreQueryFilters().SingleOrDefaultAsync(x => x.Photos.Any(x => x.Id == photoId));
     }
 }
