@@ -29,7 +29,7 @@ public static class ApplicationServiceExtensions
 
         services.AddDbContext<DataContext>(options =>
         {
-            options.UseSqlite(configuration.GetConnectionString("DefaultConnection"));
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
         });
 
         return services;

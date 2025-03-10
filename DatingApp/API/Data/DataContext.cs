@@ -34,7 +34,7 @@ IdentityRoleClaim<int>, IdentityUserToken<int>>(options)
         HasOne(t => t.TargetUser).
         WithMany(l => l.LikedByOtherUsers).
         HasForeignKey(k => k.TargetUserId).
-        OnDelete(DeleteBehavior.Cascade);
+        OnDelete(DeleteBehavior.NoAction);
 
         //messages modelling
         modelBuilder.Entity<Message>().HasOne(user => user.Sender).
