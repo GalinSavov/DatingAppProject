@@ -23,6 +23,7 @@ env:
   AZURE_WEBAPP_NAME: dately-application    # set this to the name of your Azure Web App
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '9.x'                 # set this to the .NET Core version to use
+  NODE_VERSION: '20.x'
 
 on:
   push:
@@ -38,7 +39,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Set up node.js
+        uses: actions/setup-node@v3
+        with: 
+          node-version: ${{ env.NODE_VERSION }}
 
+      - name: Install angular cli
+        run: npm install -g @angular/cli@18
+
+      - name: Install dependencies and build angular app
+        run: |
+          cd DatingApp/client
+          npm install
+          ng build
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
         with:
