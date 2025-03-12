@@ -53,7 +53,7 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Build with dotnet
-        run: dotnet build API/ --configuration Release
+        run: dotnet build API/API.csproj --configuration Release
 
       - name: dotnet publish
         run: dotnet publish API/ -c Release
