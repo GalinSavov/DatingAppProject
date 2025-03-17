@@ -12,7 +12,7 @@ builder.Services.AddIdentityServices(builder.Configuration);
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionMiddleware>();
-app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200", "https://localhost:4200").AllowCredentials());
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200", "https://localhost:4200", "https://localhost:5001").AllowCredentials());
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseDefaultFiles();
@@ -23,8 +23,6 @@ app.MapHub<MessageHub>("hubs/message");
 app.MapFallbackToController("Index", "Fallback");
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
-
-
 try
 {
     var dataContext = services.GetRequiredService<DataContext>();

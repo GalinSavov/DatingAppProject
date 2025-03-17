@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'api/',
-  hubsUrl: 'hubs/',
+  apiUrl: 'https://dately-application.azurewebsites.net/api/',
+  hubsUrl: 'https://dately-application.azurewebsites.net/hubs/',
 };

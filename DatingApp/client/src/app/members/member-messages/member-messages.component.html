@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-body">
-    @if (messagesService.messageThread().length ===0) {
+    @if (this.messagesService.messageThread().length == 0) {
     <p>No messages yet</p>
     }@else {
     <ul
@@ -61,9 +61,7 @@
             class="btn btn-primary"
             type="submit"
           >
-            Send @if(loading){
-            <i class="fa fa-spinner fa-spin"></i>
-            }
+            Send
           </button>
         </div>
       </div>

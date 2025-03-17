@@ -25,16 +25,13 @@ export class MemberMessagesComponent implements AfterViewChecked {
   messagesService = inject(MessagesService);
   username = input.required<string>();
   messageContent = '';
-  loading = false;
   sendMessage() {
-    this.loading = true;
     this.messagesService
       .sendMessage(this.username(), this.messageContent)
       .then(() => {
         this.messageForm?.reset();
         this.scrollToBottom();
       })
-      .finally(() => (this.loading = false))
       .catch((error) => {
         if (error) {
           console.log(error);

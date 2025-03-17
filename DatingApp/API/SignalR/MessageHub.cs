@@ -12,6 +12,7 @@ public class MessageHub(IMapper mapper, IHubContext<PresenceHub> presenceHub, IU
 {
     public async override Task OnConnectedAsync()
     {
+
         var httpContext = Context.GetHttpContext();
         var otherUser = httpContext?.Request.Query["user"];
         if (Context.User?.GetUsername() == null || string.IsNullOrEmpty(otherUser))
@@ -20,9 +21,15 @@ public class MessageHub(IMapper mapper, IHubContext<PresenceHub> presenceHub, IU
         await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
         var group = await AddToMessageGroup(groupName);
         await Clients.Group(groupName).SendAsync("UpdatedGroup", group);
-        var messages = unitOfWork.MessagesRepository.GetMessageThread(Context.User.GetUsername(), otherUser!);
-        if (unitOfWork.HasChanges()) await unitOfWork.Complete();
-        await Clients.Caller.SendAsync("ReceiveMessageThread", messages);
+        var messages = await unitOfWork.MessagesRepository.GetMessageThread(Context.User.GetUsername(), otherUser!);
+        Console.WriteLine($"Messages retrieved: {messages.Count()}");
+        if (unitOfWork.HasChanges())
+        {
+            Console.WriteLine("✅ Changes detected - saving to database...");
+            await unitOfWork.Complete();
+        }
+        await Clients.Caller.SendAsync("ReceiveMessageThread", messages ?? new List<MessageDTO>());
+        Console.WriteLine("✅ Messages sent to client");
     }
     public override async Task OnDisconnectedAsync(Exception? exception)
     {
