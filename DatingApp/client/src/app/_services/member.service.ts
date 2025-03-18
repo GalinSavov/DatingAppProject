@@ -1,26 +1,20 @@
-import {
-  HttpClient,
-  HttpHeaders,
-  HttpParams,
-  HttpResponse,
-} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Member } from '../_models/member';
-import { GalleryItem, ImageItem } from 'ng-gallery';
+import { GalleryItem } from 'ng-gallery';
 import { Photo } from '../_models/photo';
 import { PaginationResult } from '../_models/pagination';
 import { UserParams } from '../_models/userParams';
 import { of } from 'rxjs';
 import { AccountService } from './account.service';
 import { setPaginatedResponse, setPaginationHeaders } from './paginationHelper';
-
 @Injectable({
   providedIn: 'root',
 })
 export class MemberService {
   private http = inject(HttpClient);
-  private accountService = inject(AccountService);
+  accountService = inject(AccountService);
   baseUrl = environment.apiUrl;
   paginationResult = signal<PaginationResult<Member[]> | null>(null);
   images: GalleryItem[] = [];
@@ -28,19 +22,17 @@ export class MemberService {
   user = this.accountService.currentUser();
   userParams = signal<UserParams>(new UserParams(this.user));
   resetUserParams() {
+    this.user = this.accountService.currentUser();
     this.userParams.set(new UserParams(this.user));
   }
-
   getMember(username?: string) {
     const member: Member = [...this.memberCache.values()]
       .reduce((arr, element) => arr.concat(element.body), [])
       .find((x: Member) => x.username == username);
-    console.log(member);
 
     if (member) return of(member);
     return this.http.get<Member>(this.baseUrl + 'users/' + username);
   }
-
   getMembers() {
     const cachedParams = this.memberCache.get(
       Object.values(this.userParams()).join('-')
@@ -49,12 +41,10 @@ export class MemberService {
     if (cachedParams) {
       return setPaginatedResponse(cachedParams, this.paginationResult);
     }
-
     let params = setPaginationHeaders(
       this.userParams().currentPageNumber,
       this.userParams().itemsPerPage
     );
-
     params = params.append('minAge', this.userParams().minAge);
     params = params.append('maxAge', this.userParams().maxAge);
     params = params.append('gender', this.userParams().gender);
@@ -72,7 +62,6 @@ export class MemberService {
         },
       });
   }
-
   updateMember(member: Member) {
     return this.http
       .put(this.baseUrl + 'users', member)

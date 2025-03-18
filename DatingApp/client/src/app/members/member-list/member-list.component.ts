@@ -1,9 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MemberService } from '../../_services/member.service';
-import { Member } from '../../_models/member';
 import { MemberCardComponent } from '../member-card/member-card.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { UserParams } from '../../_models/userParams';
 import { AccountService } from '../../_services/account.service';
 import { FormsModule } from '@angular/forms';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
@@ -16,6 +14,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 })
 export class MemberListComponent implements OnInit {
   memberService = inject(MemberService);
+  accountService = inject(AccountService);
 
   genderList = [
     { value: 'male', display: 'Male' },
@@ -23,9 +22,12 @@ export class MemberListComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    if (!this.memberService.paginationResult()) this.displayMembers();
+    let user = this.accountService.currentUser();
+    if (!this.memberService.paginationResult()) this.resetFilters();
+    if (user !== this.memberService.user) {
+      this.resetFilters();
+    }
   }
-
   displayMembers() {
     this.memberService.getMembers();
   }
