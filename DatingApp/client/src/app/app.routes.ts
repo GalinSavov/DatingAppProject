@@ -14,6 +14,8 @@ import { memberDetailsResolver } from './_resolvers/member-details.resolver';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { adminGuard } from './_guards/admin.guard';
 import { preventMessagingGuard } from './_guards/prevent-messaging.guard';
+import { LearnMoreComponent } from './learn-more/learn-more.component';
+import { RegisterComponent } from './register/register.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -43,6 +45,8 @@ export const routes: Routes = [
       },
     ],
   },
+  { path: 'learn-more', component: LearnMoreComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'errors', component: TestErrorsComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'server-error', component: ServerErrorComponent },

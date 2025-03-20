@@ -1,0 +1,59 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1 class="display-4 text-primary">About Dately</h1>
+      <p class="lead text-muted">Connecting people in meaningful ways</p>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <h2 class="text-primary">Features</h2>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <i class="fa fa-check-circle text-primary"></i> Match with people near
+          you
+        </li>
+        <li class="list-group-item">
+          <i class="fa fa-check-circle text-primary"></i> Private messaging for
+          you and your matches
+        </li>
+        <li class="list-group-item">
+          <i class="fa fa-check-circle text-primary"></i> Mutual like feature to
+          prevent spam
+        </li>
+        <li class="list-group-item">
+          <i class="fa fa-check-circle text-primary"></i> Find connections based
+          on shared interests
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-6">
+      <h2 class="text-primary">How It Works</h2>
+      <p>
+        Our app works by helping you find compatible people nearby. You can
+        browse profiles, like others, and chat once there is a mutual match.
+      </p>
+      <p>
+        To start, simply create a profile, upload your picture, and fill out
+        some basic information. Our matching algorithm does the rest!
+      </p>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12 text-center">
+      <h2 class="text-primary">Ready to meet someone special?</h2>
+      @if (isLoggedIn()) {
+      <button class="btn btn-lg btn-primary" routerLink="/members">
+        View Members
+      </button>
+      }@else {
+      <button class="btn btn-lg btn-primary" routerLink="/register">
+        Join Now
+      </button>
+      }
+    </div>
+  </div>
+</div>

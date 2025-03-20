@@ -1,14 +1,15 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AccountService } from '../_services/account.service';
+
 @Component({
-  selector: 'app-home',
+  selector: 'app-learn-more',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  templateUrl: './learn-more.component.html',
+  styleUrl: './learn-more.component.css',
 })
-export class HomeComponent implements OnInit {
+export class LearnMoreComponent {
   private accountService = inject(AccountService);
   ngOnInit(): void {
     this.isLoggedIn();

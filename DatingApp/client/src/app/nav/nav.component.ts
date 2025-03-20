@@ -3,8 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { AccountService } from '../_services/account.service';
 import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { provideToastr, ToastrService } from 'ngx-toastr';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { HasRoleDirective } from '../_directives/has-role.directive';
 
 @Component({
@@ -24,12 +24,13 @@ import { HasRoleDirective } from '../_directives/has-role.directive';
 export class NavComponent {
   accountService = inject(AccountService);
   private toastr = inject(ToastrService);
+  private router = inject(Router);
   model: any = {};
 
   login() {
     this.accountService.login(this.model).subscribe({
-      next: (response) => {
-        console.log(response);
+      next: (_) => {
+        this.router.navigateByUrl('/members');
       },
       error: (error) => this.toastr.error(error.error),
     });

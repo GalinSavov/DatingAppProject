@@ -10,17 +10,21 @@ import {
 import { AccountService } from '../_services/account.service';
 import { TextInputComponent } from '../_forms/text-input/text-input.component';
 import { DatePickerComponent } from '../_forms/date-picker/date-picker.component';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, TextInputComponent, DatePickerComponent],
+  imports: [
+    ReactiveFormsModule,
+    TextInputComponent,
+    DatePickerComponent,
+    RouterLink,
+  ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
 export class RegisterComponent implements OnInit {
-  cancelRegister = output<boolean>(); // for child to parent communication
   private accountService = inject(AccountService);
   registerForm: FormGroup = new FormGroup({});
   private formBuilder = inject(FormBuilder);
@@ -70,9 +74,6 @@ export class RegisterComponent implements OnInit {
       },
       error: (error) => (this.validationErrors = error),
     });
-  }
-  cancel() {
-    this.cancelRegister.emit(false);
   }
   private getDateOnly(dateOfBirth: string | undefined) {
     if (!dateOfBirth) return;
