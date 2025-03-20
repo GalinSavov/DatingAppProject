@@ -59,4 +59,11 @@ public class LikesController(IUnitOfWork unitOfWork) : BaseApiController
         Response.AddPaginationHeader(users);
         return Ok(users);
     }
+    [HttpGet("has-mutual-like")]
+    public async Task<bool> HasMutualLike([FromQuery] string sourceUsername, string targetUsername)
+    {
+        var sourceUser = await unitOfWork.UserRepository.GetUserByUsernameAsync(sourceUsername) ?? throw new Exception("Could not find the user!");
+        var targetUser = await unitOfWork.UserRepository.GetUserByUsernameAsync(targetUsername) ?? throw new Exception("Could not find the user!");
+        return await unitOfWork.LikesRepository.HasMutualLikeWithAnotherUser(sourceUser.UserName!, targetUser.UserName!);
+    }
 }

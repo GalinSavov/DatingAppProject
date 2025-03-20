@@ -1,6 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Member } from '../_models/member';
 import { PaginationResult } from '../_models/pagination';
 import { setPaginatedResponse, setPaginationHeaders } from './paginationHelper';
@@ -40,6 +40,14 @@ export class LikesService {
         this.likeIds.set(likeIds);
         console.log(`${this.baseUrl}list`);
       },
+    });
+  }
+  mutualLike(sourceUsername: string, targetUsername: string) {
+    let params = new HttpParams()
+      .set('sourceUsername', sourceUsername)
+      .set('targetUsername', targetUsername);
+    return this.http.get<boolean>(`${this.baseUrl}likes/has-mutual-like`, {
+      params,
     });
   }
 }

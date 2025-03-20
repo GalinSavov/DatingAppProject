@@ -59,5 +59,14 @@ public class LikesRepository(DataContext dataContext, IMapper mapper) : ILikesRe
         }
         return await PagedList<MemberDTO>.CreateAsync(query, likesParams.ItemsPerPage, likesParams.CurrentPageNumber);
     }
+    public async Task<bool> HasMutualLikeWithAnotherUser(string sourceUsername, string targetUsername)
+    {
+        var sourceUser = await dataContext.Users.FirstOrDefaultAsync(x => x.UserName == sourceUsername) ?? throw new Exception("User not found in repository");
+        var targetUser = await dataContext.Users.FirstOrDefaultAsync(x => x.UserName == targetUsername) ?? throw new Exception("User not found in repository");
+        var currentUserLikeIds = await GetCurrentUserLikeIds(sourceUser.Id);
+        return await dataContext.Likes.Where(like => like.TargetUserId == sourceUser.Id
+        && currentUserLikeIds.Contains(targetUser.Id)
+        && like.SourceUserId == targetUser.Id).AnyAsync();
+    }
 
 }

@@ -34,7 +34,6 @@ export class MessagesService {
     this.hubConnection.start().catch((error) => console.log(error));
     this.hubConnection.on('ReceiveMessageThread', (messages) => {
       this.messageThread.set(messages);
-      console.log(this.messageThread());
     });
     this.hubConnection.on('NewMessage', (newMessage) => {
       this.messageThread.update((messages) => [...messages, newMessage]);

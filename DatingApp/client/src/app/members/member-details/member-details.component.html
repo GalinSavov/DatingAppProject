@@ -12,6 +12,16 @@
         <div class="mb-2">
           <i class="fa fa-user-circle text-success"></i> Online Now
         </div>
+        } @if(hasMutualLike()) {
+        <div class="mb-2">
+          <i class="fa fa-heart" style="color: red"></i> You and
+          {{ member.knownAs }} both liked each other
+        </div>
+        } @else if(hasLiked() && !hasMutualLike()) {
+        <div class="mb-2">
+          <i class="fa fa-heart" style="color: red"></i> You liked
+          {{ member.knownAs }}
+        </div>
         }
         <div>
           <strong>Location:</strong>
@@ -32,10 +42,13 @@
       </div>
       <div class="card-footer">
         <div class="btn-group d-flex">
-          <button class="btn btn-primary">Like</button>
+          @if (!hasMutualLike()) {
+          <button class="btn btn-primary" (click)="toggleLike()">Like</button>
+          } @if(hasMutualLike()){
           <button class="btn btn-success" (click)="selectTab('Messages')">
             Message
           </button>
+          }
         </div>
       </div>
     </div>
@@ -64,11 +77,13 @@
           class="gallery"
         ></gallery>
       </tab>
-      <tab heading="Messages" (selectTab)="onTabActivated($event)">
+      <tab
+        heading="Messages"
+        (selectTab)="onTabActivated($event)"
+        [disabled]="!hasMutualLike()"
+      >
         <h4>Messages</h4>
-        <app-member-messages
-          [username]="member.username"
-        ></app-member-messages>
+        <app-member-messages [username]="member.username"></app-member-messages>
       </tab>
     </tabset>
   </div>

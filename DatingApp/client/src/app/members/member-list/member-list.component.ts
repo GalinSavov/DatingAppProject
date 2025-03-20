@@ -5,6 +5,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { AccountService } from '../../_services/account.service';
 import { FormsModule } from '@angular/forms';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { LikesService } from '../../_services/likes.service';
 @Component({
   selector: 'app-member-list',
   standalone: true,
@@ -15,6 +16,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 export class MemberListComponent implements OnInit {
   memberService = inject(MemberService);
   accountService = inject(AccountService);
+  likesService = inject(LikesService);
 
   genderList = [
     { value: 'male', display: 'Male' },

@@ -8,7 +8,6 @@ import { RegisterComponent } from './register/register.component';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { EditProfileComponent } from './updates/edit-profile/edit-profile.component';
 import { NgxSpinnerComponent } from 'ngx-spinner';
-import { LikesService } from './_services/likes.service';
 
 @Component({
   selector: 'app-root',
