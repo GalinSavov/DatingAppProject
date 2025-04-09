@@ -49,6 +49,9 @@ export class MemberService {
     params = params.append('maxAge', this.userParams().maxAge);
     params = params.append('gender', this.userParams().gender);
     params = params.append('orderBy', this.userParams().orderBy);
+    this.userParams().interests.forEach((interest) => {
+      params = params.append('interests', interest);
+    });
 
     return this.http
       .get<Member[]>(this.baseUrl + 'users/', { observe: 'response', params })

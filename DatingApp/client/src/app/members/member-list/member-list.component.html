@@ -34,6 +34,36 @@
           }
         </select>
       </div>
+      <div class="dropdown">
+        <button
+          class="btn btn-outline-primary dropdown-toggle"
+          type="button"
+          (click)="toggleDropdown()"
+        >
+          {{ "Select Interests" }}
+        </button>
+        @if (dropdownOpen) {
+        <ul class="dropdown-menu show">
+          @for (interest of interestsService.allInterests(); track interest.id)
+          {
+          <li>
+            <label class="dropdown-item">
+              <input
+                type="checkbox"
+                [checked]="
+                  this.memberService
+                    .userParams()
+                    .interests.includes(interest.name)
+                "
+                (change)="toggleInterest(interest.name)"
+              />
+              {{ interest.name }}
+            </label>
+          </li>
+          }
+        </ul>
+        }
+      </div>
       <button class="btn btn-primary ms-1" type="submit">Apply Filters</button>
       <button class="btn btn-info ms-1" type="button" (click)="resetFilters()">
         Reset Filters

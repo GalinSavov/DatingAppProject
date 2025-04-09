@@ -62,15 +62,13 @@ export class RegisterComponent implements OnInit {
         : { isMatching: true };
     };
   }
-
   register() {
     const dob = this.getDateOnly(this.registerForm.get('dateOfBirth')?.value);
     console.log(dob);
     this.registerForm.patchValue({ dateOfBirth: dob });
     this.accountService.register(this.registerForm.value).subscribe({
       next: () => {
-        console.log('Hello!!!');
-        this.router.navigateByUrl('/members');
+        this.router.navigateByUrl('/member/edit');
       },
       error: (error) => (this.validationErrors = error),
     });

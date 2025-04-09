@@ -42,3 +42,20 @@
   animation: fa-blink 1.5s linear infinite;
   color: rgb(1, 189, 42);
 }
+
+.fixed-height-card {
+  height: 350px; /* or whatever height fits your layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fixed-img {
+  height: 200px;
+  object-fit: cover;
+}
+.into-span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

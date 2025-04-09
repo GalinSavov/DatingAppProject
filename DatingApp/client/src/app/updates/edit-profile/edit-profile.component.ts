@@ -3,6 +3,7 @@ import {
   HostListener,
   inject,
   OnInit,
+  signal,
   ViewChild,
 } from '@angular/core';
 import { AccountService } from '../../_services/account.service';
@@ -14,7 +15,8 @@ import { ToastrService } from 'ngx-toastr';
 import { PhotoEditorComponent } from '../../members/photo-editor/photo-editor.component';
 import { DatePipe } from '@angular/common';
 import { TimeAgoCustomPipe } from '../../time-ago-custom.pipe';
-
+import { InterestsService } from '../../_services/interests.service';
+import { Interest } from '../../_models/interest';
 @Component({
   selector: 'app-edit-profile',
   standalone: true,
@@ -35,12 +37,15 @@ export class EditProfileComponent implements OnInit {
     if (this.editForm?.dirty) $event.returnValue = true;
   }
   ngOnInit(): void {
+    this.interestsService.getInterests();
     this.loadUserProfile();
   }
   private accountService = inject(AccountService);
   private memberService = inject(MemberService);
+  interestsService = inject(InterestsService);
   private toastr = inject(ToastrService);
   member?: Member;
+  isDropdownOpen: boolean = false;
 
   loadUserProfile() {
     if (!this.accountService.currentUser()) return;
@@ -49,9 +54,49 @@ export class EditProfileComponent implements OnInit {
       .subscribe({
         next: (member) => {
           this.member = member;
-          console.log(member.username);
+          this.interestsService.getInterestsForUser(this.member.username);
         },
         error: (error) => console.log(error),
+      });
+  }
+  // Method to toggle the dropdown visibility
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+    console.log(this.interestsService.interestNames());
+  }
+
+  removeInterest(interest: Interest) {
+    this.interestsService
+      .deleteInterestFromUser(this.member?.username!, interest.id)
+      .subscribe({
+        next: () => {
+          this.interestsService.interestsForCurrentUser.set(
+            this.interestsService
+              .interestsForCurrentUser()
+              .filter((x) => x.id != interest.id)
+          );
+          this.interestsService.interestNames.set(
+            this.interestsService
+              .interestNames()
+              .filter((x) => x !== interest.name)
+          );
+        },
+      });
+  }
+  addInterest(interest: Interest) {
+    this.interestsService
+      .addInterestToUser(this.member?.username!, interest.id)
+      .subscribe({
+        next: () => {
+          this.interestsService.interestsForCurrentUser.set([
+            ...this.interestsService.interestsForCurrentUser(),
+            interest,
+          ]);
+          this.interestsService.interestNames.set([
+            ...this.interestsService.interestNames(),
+            interest.name,
+          ]);
+        },
       });
   }
   updateMember() {

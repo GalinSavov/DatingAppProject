@@ -6,6 +6,7 @@ public interface IUnitOfWork
     IMessagesRepository MessagesRepository { get; }
     ILikesRepository LikesRepository { get; }
     IPhotosRepository PhotosRepository { get; }
+    IInterestsRepository InterestsRepository { get; }
     Task<bool> Complete();
     bool HasChanges();
 }

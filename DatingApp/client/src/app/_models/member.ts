@@ -1,3 +1,4 @@
+import { Interest } from './interest';
 import { Photo } from './photo';
 
 export interface Member {
@@ -10,7 +11,7 @@ export interface Member {
   lastActive: Date;
   gender: string;
   introduction: string;
-  interests: string;
+  userInterests: Interest[];
   lookingFor: string;
   city: string;
   country: string;

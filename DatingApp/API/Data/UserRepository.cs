@@ -26,7 +26,11 @@ public class UserRepository(DataContext dataContext, IMapper mapper) : IUserRepo
             "created" => query.OrderByDescending(x => x.Created),
             _ => query.OrderByDescending(x => x.LastActive)
         };
-
+        if (userParams.Interests != null)
+        {
+            query = query.Where(user => user.UserInterests.Any(x => userParams.Interests.Contains(x.Interest.Name)))
+            .OrderByDescending(user => user.UserInterests.Count(z => userParams.Interests.Contains(z.Interest.Name)));
+        }
         return await PagedList<MemberDTO>.CreateAsync(query.ProjectTo<MemberDTO>(mapper.ConfigurationProvider), userParams.ItemsPerPage, userParams.CurrentPageNumber);
     }
     public async Task<IEnumerable<AppUser>> GetAllUsersAsync()
@@ -50,7 +54,7 @@ public class UserRepository(DataContext dataContext, IMapper mapper) : IUserRepo
     }
     public async Task<AppUser?> GetUserByUsernameAsync(string username)
     {
-        return await dataContext.Users.Include(x => x.Photos).SingleOrDefaultAsync(x => x.UserName == username);
+        return await dataContext.Users.Include(x => x.Photos).Include(z => z.UserInterests).SingleOrDefaultAsync(x => x.UserName == username);
     }
     public void Update(AppUser appUser)
     {
@@ -59,5 +63,9 @@ public class UserRepository(DataContext dataContext, IMapper mapper) : IUserRepo
     public async Task<AppUser?> GetUserByPhotoId(int photoId)
     {
         return await dataContext.Users.Include(x => x.Photos).IgnoreQueryFilters().SingleOrDefaultAsync(x => x.Photos.Any(x => x.Id == photoId));
+    }
+    public void PopulateInterestScoresOfUsers(IQueryable query)
+    {
+
     }
 }

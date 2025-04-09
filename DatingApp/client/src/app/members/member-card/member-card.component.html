@@ -1,7 +1,7 @@
-<div class="card mb-4">
+<div class="card mb-4 fixed-height-card">
   <div class="card-img-wrapper">
     <img
-      class="card-img-top"
+      class="card-img-top fixed-img"
       src="{{ member().photoUrl || '/user.png' }}"
       alt="{{ member().knownAs }}"
     />
@@ -44,5 +44,8 @@
       }
     </h6>
     <p class="card-text text-muted text-center">{{ member().city }}</p>
+    <span class="into-span">Interests:</span> @for (interest of
+    member().userInterests; track $index) { {{ interest }}@if ($index <
+    member().userInterests.length - 1) {<span>,</span>} }
   </div>
 </div>

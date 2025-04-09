@@ -69,14 +69,53 @@
             rows="6"
           >
           </textarea>
-          <h4 class="mt-2">Interests</h4>
-          <textarea
-            name="interests"
-            class="form-control"
-            [(ngModel)]="member.interests"
-            rows="6"
+          <h4>Interests</h4>
+          <div
+            class="form-control p-2 mt-2"
+            style="
+              min-height: 100px;
+              max-height: 150px;
+              overflow-y: auto;
+              white-space: normal;
+            "
           >
-          </textarea>
+            @for (interest of interestsService.interestsForCurrentUser(); track
+            $index) {
+            <span class="badge bg-primary me-2 mb-2 p-2 fs-6">
+              {{ interest.name }}
+              <button
+                type="button"
+                class="btn-close ms-2"
+                (click)="removeInterest(interest)"
+              ></button>
+            </span>
+            }
+            <div class="dropdown">
+              <button
+                class="btn btn-outline-primary dropdown-toggle"
+                type="button"
+                (click)="toggleDropdown()"
+              >
+                {{ "Add Interests" }}
+              </button>
+            </div>
+            @if (isDropdownOpen) {
+            <ul class="dropdown-menu-show">
+              @for (interest of interestsService.allInterests(); track
+              interest.id) {
+              <li
+                [class.disabled]="
+                  interestsService.interestNames().includes(interest.name)
+                "
+              >
+                <a class="dropdown-item" (click)="addInterest(interest)"
+                  >{{ interest.name }}
+                </a>
+              </li>
+              }
+            </ul>
+            }
+          </div>
           <h4 class="mt-2">Location Details</h4>
           <div class="d-flex align-items-center">
             <label>City:</label>

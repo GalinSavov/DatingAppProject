@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace API.Data.Migrations
+namespace API.Migrations
 {
     /// <inheritdoc />
-    public partial class SqlInit : Migration
+    public partial class RemovedInterestScore : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,7 +38,6 @@ namespace API.Data.Migrations
                     LastActive = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Introduction = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Interests = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LookingFor = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -71,6 +70,19 @@ namespace API.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Groups", x => x.Name);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Interests",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Interests", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -276,6 +288,32 @@ namespace API.Data.Migrations
                         principalColumn: "Name");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "UserInterests",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    InterestId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserInterests", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserInterests_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserInterests_Interests_InterestId",
+                        column: x => x.InterestId,
+                        principalTable: "Interests",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -339,6 +377,16 @@ namespace API.Data.Migrations
                 name: "IX_Photos_AppUserId",
                 table: "Photos",
                 column: "AppUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserInterests_InterestId",
+                table: "UserInterests",
+                column: "InterestId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserInterests_UserId",
+                table: "UserInterests",
+                column: "UserId");
         }
 
         /// <inheritdoc />
@@ -372,6 +420,9 @@ namespace API.Data.Migrations
                 name: "Photos");
 
             migrationBuilder.DropTable(
+                name: "UserInterests");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
@@ -379,6 +430,9 @@ namespace API.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Interests");
         }
     }
 }

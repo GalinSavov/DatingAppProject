@@ -2,7 +2,6 @@ using API.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace API.Data;
 public class DataContext(DbContextOptions options) : IdentityDbContext<AppUser,
@@ -14,6 +13,8 @@ IdentityRoleClaim<int>, IdentityUserToken<int>>(options)
     public DbSet<Group> Groups { get; set; }
     public DbSet<Connection> Connections { get; set; }
     public DbSet<Photo> Photos { get; set; }
+    public DbSet<Interest> Interests { get; set; }
+    public DbSet<AppUserInterest> UserInterests { get; set; }
 
     override protected void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -48,5 +49,9 @@ IdentityRoleClaim<int>, IdentityUserToken<int>>(options)
 
         //photo modelling
         modelBuilder.Entity<Photo>().HasQueryFilter(x => x.IsApproved == true);
+
+        //interests modelling
+        modelBuilder.Entity<AppUser>().HasMany(x => x.UserInterests).WithOne(x => x.User).HasForeignKey(x => x.UserId).IsRequired();
+        modelBuilder.Entity<Interest>().HasMany(x => x.UserInterests).WithOne(x => x.Interest).HasForeignKey(x => x.InterestId).IsRequired();
     }
 }
