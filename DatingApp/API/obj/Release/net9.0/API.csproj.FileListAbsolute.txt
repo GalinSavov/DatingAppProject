@@ -181,13 +181,8 @@ C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\API.sourcelink.json
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\scopedcss\bundle\API.styles.css
-C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\compressed\zzyd6wgwl5-b4z6zwuwkk.gz
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\compressed\6x0scahnf1-vagikyz9qx.gz
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\compressed\1dpm1p8bmc-lqg8m47ox2.gz
-C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\compressed\shx2gze5xw-youd0uwsf2.gz
-C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\compressed\ipsy3anybd-dosqy3kf6t.gz
-C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\compressed\wsenxafarw-39tegmrjtp.gz
-C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\compressed\6704xeuwjy-kv479g63n6.gz
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\staticwebassets.build.json
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\staticwebassets.development.json
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\staticwebassets.build.endpoints.json
@@ -203,3 +198,8 @@ C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\API.pdb
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\API.genruntimeconfig.cache
 C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\ref\API.dll
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\compressed\zzyd6wgwl5-hqze4y507g.gz
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\compressed\shx2gze5xw-i7qa4w9jtw.gz
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\compressed\ipsy3anybd-wxwxrej6pw.gz
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\compressed\wsenxafarw-gv9nnx918d.gz
+C:\Users\galsa\OneDrive\Desktop\.NET Project\DatingAppProject\DatingApp\API\obj\Release\net9.0\compressed\6704xeuwjy-irs7w2985u.gz
