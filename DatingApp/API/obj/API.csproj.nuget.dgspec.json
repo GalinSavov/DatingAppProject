@@ -67,10 +67,6 @@
               "target": "Package",
               "version": "[9.0.2, )"
             },
-            "Microsoft.Data.SqlClient": {
-              "target": "Package",
-              "version": "[5.1.6, )"
-            },
             "Microsoft.EntityFrameworkCore.Design": {
               "target": "Package",
               "version": "[9.0.0, )"
