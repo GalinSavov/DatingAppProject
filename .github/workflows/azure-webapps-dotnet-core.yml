@@ -72,6 +72,9 @@ jobs:
       - name: dotnet publish
         run: dotnet publish DatingApp/API/ -c Release
 
+      - name: Apply Migrations (on Azure)
+        run: dotnet ef database update --project DatingApp/API/API.csproj --configuration Release --verbose
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
