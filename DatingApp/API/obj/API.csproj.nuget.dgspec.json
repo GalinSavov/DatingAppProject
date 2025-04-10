@@ -73,7 +73,7 @@
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "target": "Package",
-              "version": "[9.0.2, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -81,7 +81,7 @@
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[9.0.2, )"
+              "version": "[9.0.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
