@@ -51,7 +51,7 @@ IdentityRoleClaim<int>, IdentityUserToken<int>>(options)
         modelBuilder.Entity<Photo>().HasQueryFilter(x => x.IsApproved == true);
 
         //interests modelling
-        modelBuilder.Entity<AppUser>().HasMany(x => x.UserInterests).WithOne(x => x.User).HasForeignKey(x => x.UserId).IsRequired();
-        modelBuilder.Entity<Interest>().HasMany(x => x.UserInterests).WithOne(x => x.Interest).HasForeignKey(x => x.InterestId).IsRequired();
+        modelBuilder.Entity<AppUser>().HasMany(x => x.UserInterests).WithOne(x => x.User).HasForeignKey(x => x.UserId).IsRequired().OnDelete(DeleteBehavior.Cascade);
+        modelBuilder.Entity<Interest>().HasMany(x => x.UserInterests).WithOne(x => x.Interest).HasForeignKey(x => x.InterestId).IsRequired().OnDelete(DeleteBehavior.Restrict);
     }
 }

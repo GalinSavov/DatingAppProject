@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250410134918_DroppedDB")]
-    partial class DroppedDB
+    [Migration("20250411085310_UpdatedDB")]
+    partial class UpdatedDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -424,7 +424,7 @@ namespace API.Data.Migrations
                     b.HasOne("API.Entities.Interest", "Interest")
                         .WithMany("UserInterests")
                         .HasForeignKey("InterestId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("API.Entities.AppUser", "User")
