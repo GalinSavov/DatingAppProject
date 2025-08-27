@@ -19,10 +19,10 @@ public class AccountController(UserManager<AppUser> userManager, IMapper mapper)
         if (await UserExists(registerDTO.Username))
             return BadRequest("Username is already taken!");
 
-        var user = mapper.Map<AppUser>(registerDTO);
+        var user = mapper.Map<AppUser>(registerDTO); // maps the register DTO in the request body to an AppUser entity
         user.UserName = registerDTO.Username.ToLower();
 
-        var result = await userManager.CreateAsync(user, registerDTO.Password); //saves the user in the database
+        var result = await userManager.CreateAsync(user, registerDTO.Password); // saves the user object in the database
         if (!result.Succeeded) return BadRequest(result.Errors);
 
         return new UserDTO

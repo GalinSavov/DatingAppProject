@@ -29,15 +29,12 @@ public class UsersController(IMapper mapper, IPhotoService photoService, IUnitOf
     {
         MemberDTO? user;
         if (username == User.GetUsername())
-        {
             user = await unitOfWork.UserRepository.GetMemberByUsernameAsync(username, true);
-        }
         else
-        {
             user = await unitOfWork.UserRepository.GetMemberByUsernameAsync(username, false);
-        }
+        
         if (user == null) return NotFound();
-        return user;
+        return Ok(user);
     }
     [HttpPut]
     public async Task<ActionResult> UpdateUser(MemberUpdateDTO memberUpdateDTO)
