@@ -18,22 +18,36 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up node.js
+        uses: actions/setup-node@v4
+        with: 
+          node-version: '20.x'
+
+      - name: Install angular cli
+        run: npm install -g @angular/cli@18
+
+      - name: Install dependencies and build angular app
+        run: |
+          cd DatingApp/client
+          npm install
+          ng build
+
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '9.x'
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build DatingApp/API/API.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+        run: dotnet publish DatingApp/API/API.csproj -c Release -o ./publish
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          path: ./publish
 
   deploy:
     runs-on: windows-latest
@@ -61,5 +75,6 @@ jobs:
         with:
           app-name: 'dating-app-2025'
           slot-name: 'Production'
-          package: .
+          package: ./.net-app
+
           
