@@ -34,7 +34,7 @@ export class MemberListComponent implements OnInit {
   ngOnInit(): void {
     let user = this.accountService.currentUser();
     if (!this.memberService.paginationResult()) this.resetFilters();
-    if (user !== this.memberService.user) {
+    if (user?.username !== this.memberService.user?.username) {
       this.resetFilters();
     }
     this.interestsService.getInterests();

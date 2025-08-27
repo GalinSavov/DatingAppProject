@@ -24,6 +24,7 @@ export class MemberService {
   resetUserParams() {
     this.user = this.accountService.currentUser();
     this.userParams.set(new UserParams(this.user));
+    this.memberCache.clear();
   }
   getMember(username?: string) {
     const member: Member = [...this.memberCache.values()]

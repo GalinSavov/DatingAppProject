@@ -19,6 +19,7 @@ public class UsersController(IMapper mapper, IPhotoService photoService, IUnitOf
     public async Task<ActionResult<IEnumerable<MemberDTO>>> GetUsers([FromQuery] UserParams userParams)
     {
         userParams.CurrentUsername = User.GetUsername();
+        Console.WriteLine("--------------------------------------------------------" + User.GetUsername() + "---------------------------------------------------");
         var users = await unitOfWork.UserRepository.GetAllMembersAsync(userParams);
         Response.AddPaginationHeader(users);
         return Ok(users);

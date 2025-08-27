@@ -5,6 +5,7 @@ import { map } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { LikesService } from './likes.service';
 import { PresenceService } from './presence.service';
+import { MemberService } from './member.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,7 @@ export class AccountService {
   private http = inject(HttpClient);
   private likesService = inject(LikesService);
   private presenceService = inject(PresenceService);
+  //private memberService = inject(MemberService);
   baseUrl = environment.apiUrl;
   currentUser = signal<User | null>(null);
   roles = computed(() => {
@@ -54,5 +56,6 @@ export class AccountService {
     localStorage.removeItem('user');
     this.currentUser.set(null);
     this.presenceService.stopHubConnection();
+    //this.memberService.resetUserParams();
   }
 }
