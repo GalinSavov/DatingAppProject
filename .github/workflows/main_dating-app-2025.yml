@@ -61,6 +61,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
+          path: .net-app
       
       - name: Login to Azure
         uses: azure/login@v2
@@ -75,6 +76,7 @@ jobs:
         with:
           app-name: 'dating-app-2025'
           slot-name: 'Production'
-          package: ./.net-app
+          package: .net-app
 
           
+
